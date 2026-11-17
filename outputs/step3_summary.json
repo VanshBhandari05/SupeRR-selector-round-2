@@ -1,0 +1,33 @@
+{
+ "spin_share_live": 0.37223026745780524,
+ "spin_share_pressure": 0.34958257364936185,
+ "spin_ratio": 0.939156764539545,
+ "spinners_listed": 8,
+ "spinners_pool": 20,
+ "pool_size": 55,
+ "listed_spinners": [
+  "Sunil Narine",
+  "Kuldeep Yadav",
+  "Rashid Khan",
+  "Varun Chakravarthy",
+  "Wanindu Hasaranga",
+  "Axar Patel",
+  "Noor Ahmad",
+  "Krunal Pandya"
+ ],
+ "listed_pace": [
+  "Josh Hazlewood",
+  "Jasprit Bumrah"
+ ],
+ "recency_overlap_proxy": 8,
+ "recency_overlap_final": 8,
+ "recency_kendall": 0.802612481857765,
+ "recency_out": [
+  "Nicholas Pooran",
+  "Shubman Gill"
+ ],
+ "recency_in": [
+  "Ishan Kishan",
+  "Virat Kohli"
+ ]
+}

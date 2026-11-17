@@ -1,0 +1,28 @@
+{
+ "grid": [
+  0.03,
+  0.1,
+  0.3,
+  1.0,
+  3.0
+ ],
+ "C1": 0.1,
+ "C2": 0.1,
+ "logloss": {
+  "1": {},
+  "2": {}
+ },
+ "use_projection": true,
+ "projection_brier": [
+  {
+   "innings": 1,
+   "brier_star_no_projection": 0.21934020378841124,
+   "brier_star_projected": 0.21934021737320106
+  },
+  {
+   "innings": 2,
+   "brier_star_no_projection": 0.12699728344322875,
+   "brier_star_projected": 0.12699725938031145
+  }
+ ]
+}

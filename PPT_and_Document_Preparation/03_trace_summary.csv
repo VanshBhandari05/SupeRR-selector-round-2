@@ -1,0 +1,7 @@
+kind,match_id,date,teams,chasing_team,target,result,chase_balls,peak_LI,peak_ball_of_chase,peak_over,live_balls,pressure_balls,pressure_share_of_chase,final_wp_star
+tight,13613,2022-02-13,Australia v Sri Lanka,Sri Lanka,165,Australia Won the one over Eliminator,122,18.35,122,20,122,77,0.631,0.219
+tight,13512,2022-01-23,West Indies v England,West Indies,174,England Won by 1 Run,124,1.44,124,20,66,6,0.048,0.015
+tight,16662,2022-09-07,Pakistan v Afghanistan,Pakistan,130,Pakistan Won by 1 Wicket,117,11.31,117,20,117,74,0.632,0.635
+one_sided,19717,2023-02-01,India v New Zealand,New Zealand,235,India Won by 168 runs,75,0.69,5,1,7,0,0.0,0.001
+one_sided,40040,2025-02-02,India v England,England,248,India Won by 150 runs,65,0.93,13,3,33,0,0.0,0.001
+one_sided,15458,2022-06-07,Sri Lanka v Australia,Australia,129,Australia Won by 10 Wickets,87,0.95,7,2,30,0,0.0,0.999

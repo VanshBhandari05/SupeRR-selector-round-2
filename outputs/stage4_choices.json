@@ -1,0 +1,7 @@
+{
+ "lambda_B": 300,
+ "lambda_C": 3000,
+ "cv_mse": 3.043714756743832,
+ "fallback_batters": false,
+ "fallback_bowlers": false
+}

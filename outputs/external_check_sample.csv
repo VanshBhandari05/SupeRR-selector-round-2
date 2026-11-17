@@ -1,0 +1,16 @@
+match_id,match_date,group,home_team,away_team,bat1,bat2,R1,R2,result
+14152,2022-05-11,IPL,Rajasthan Royals,Delhi Capitals,3.0,7.0,160,161,Delhi Capitals Won by 8 Wickets
+14154,2022-05-13,IPL,Royal Challengers Bengaluru,Punjab Kings,4.0,5.0,209,155,Punjab Kings won by 54 runs
+14159,2022-05-17,IPL,Mumbai Indians,Sunrisers Hyderabad,242.0,2.0,193,190,Sunrisers Hyderabad Won by 3 Runs
+17739,2022-10-09,T20I-full,New Zealand,Bangladesh,21.0,17.0,137,142,New Zealand Won by 8 wickets
+31242,2024-04-10,IPL,Rajasthan Royals,Gujarat Titans,3.0,3508.0,196,199,Gujarat Titans Won by 3 wickets
+31246,2024-04-14,IPL,Kolkata Knight Riders,Lucknow Super Giants,3509.0,8.0,161,160,Kolkata Knight Riders Won by 8 wickets
+35427,2024-08-26,T20I-assoc,Netherlands,Canada,89.0,24.0,132,120,Canada Won by 8 runs
+40719,2025-04-12,IPL,Lucknow Super Giants,Gujarat Titans,3508.0,3509.0,180,182,Lucknow Super Giants Won by 6 wickets
+40762,2025-05-25,IPL,Gujarat Titans,Chennai Super Kings,1.0,3508.0,230,143,Chennai Super Kings Won by 83 runs
+41977,2025-11-02,T20I-full,Australia,India,20.0,18.0,186,186,India Won by 5 wickets
+43594,2025-07-13,T20I-full,Sri Lanka,Bangladesh,21.0,27.0,179,94,Bangladesh Won by 83 runs
+45504,2025-09-17,T20I-assoc,Pakistan,United Arab Emirates,25.0,272.0,148,101,Pakistan Won by 41 runs
+45505,2025-09-18,T20I-full,Sri Lanka,Afghanistan,78.0,27.0,169,163,Sri Lanka Won by 6 wickets
+48467,2026-01-31,T20I-assoc,United Arab Emirates,Ireland,23.0,272.0,170,140,Ireland Won by 30 runs
+50598,2026-06-19,T20I-full,Bangladesh,Australia,20.0,21.0,192,187,Australia Won by 7 runs

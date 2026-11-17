@@ -1,0 +1,26 @@
+# Proprietary competition dataset - never committed
+ball_by_ball.csv
+matches.csv
+playing_eleven.csv
+teams.csv
+competitions.csv
+competition_team_player_mapping.csv
+
+# Match-level data derived from the dataset
+outputs/matches_flags.csv
+outputs/matches_clean_totals.csv
+
+# Large regenerable intermediates (run `python run_all.py` to rebuild)
+*.parquet
+*.npz
+*.pkl
+
+# Not part of this repo
+website/
+Round 1 Problem Statement*.pdf
+images*.jpg
+images*.png
+__pycache__/
+*.pyc
+*.nbi
+*.nbc

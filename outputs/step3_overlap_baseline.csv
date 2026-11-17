@@ -1,0 +1,5 @@
+role,pool,overlap_of_10,baseline_only_top10_not_in_main,main_top10_not_in_baseline_only
+batters,same pool as main (negative-shift players removed),9,Jos Buttler,Shubman Gill
+batters,"eligible + active, nothing removed",9,Jos Buttler,Shubman Gill
+bowlers,same pool as main (negative-shift players removed),10,,
+bowlers,"eligible + active, nothing removed",10,,

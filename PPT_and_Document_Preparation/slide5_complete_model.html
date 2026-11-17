@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Complete Model in One Page</title>
+<meta name="viewport" content="width=1440">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<style>
+  :root{
+    --bg:#0a1a40; --blk:#10265a; --edge:#2b4c9a; --ink:#ffffff; --dim:#a9bde8;
+    --pink:#ff5c9a; --line:#8fb0ff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#050d24}
+  body{display:flex;justify-content:center}
+  .slide{position:relative;width:1440px;height:810px;background:var(--bg);color:var(--ink);
+         font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif;overflow:hidden}
+  h1{position:absolute;left:20px;top:10px;font-size:28px;font-weight:700;letter-spacing:.2px}
+  .tag{position:absolute;right:20px;top:18px;font-size:13px;color:var(--dim)}
+  .blk{position:absolute;width:310px;background:var(--blk);border:1.4px solid var(--edge);border-radius:6px;padding:0 10px 6px 10px;overflow:hidden}
+  .hd{display:flex;align-items:center;gap:8px;height:28px;margin:0 -10px 4px -10px;padding:0 10px;
+      background:#0d2050;border-bottom:1px solid var(--edge)}
+  .num{width:20px;height:20px;border-radius:50%;background:var(--pink);color:#0a1a40;font-weight:700;font-size:13px;
+       display:flex;align-items:center;justify-content:center;flex:none}
+  .lab{font-size:12.5px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:#dbe6ff}
+  .ln{font-size:12.4px;line-height:1.42;margin:1px 0}
+  .tx{font-size:11.5px;color:var(--dim);line-height:1.35;margin:1px 0}
+  .out{position:absolute;left:10px;right:10px;bottom:6px;font-size:12.6px;color:var(--ink);border-top:1px dashed var(--edge);padding-top:3px}
+  .out b{font-size:10.5px;letter-spacing:.7px;color:var(--pink);margin-right:6px}
+  .lb{position:absolute;transform:translate(-50%,-50%);background:var(--bg);padding:0 3px;font-size:11.2px;line-height:1.1;white-space:nowrap;color:#d8e4ff;text-align:center}
+  .lb.r{transform:translate(-100%,-50%)}
+  svg.arr{position:absolute;left:0;top:0;pointer-events:none}
+  .final{position:absolute;border:1.8px solid var(--pink);border-radius:6px;background:#2a1030;color:var(--pink);
+         font-weight:700;font-size:14.5px;display:flex;align-items:center;justify-content:center;letter-spacing:.3px}
+  table.cr{border-collapse:collapse;width:100%;font-size:11px;margin-top:3px}
+  table.cr td{border:1px solid #2b4c9a;padding:1px 4px;line-height:1.25;vertical-align:top}
+  table.cr td:first-child{color:#dbe6ff;width:35%}
+  .key{position:absolute;left:20px;right:20px;top:710px;height:94px;border:1px solid var(--edge);border-radius:6px;background:#0c1d49;
+       padding:4px 8px;display:grid;grid-template-columns:repeat(7,1fr);column-gap:10px;font-size:10.4px;line-height:1.5;color:var(--dim)}
+  .key div{white-space:nowrap}
+  .key .katex{font-size:1.05em;color:#fff}
+  .keyt{position:absolute;left:28px;top:702px;font-size:10px;letter-spacing:.8px;background:var(--bg);padding:0 5px;color:var(--dim)}
+  .katex{color:inherit}
+  .pk{color:var(--pink)}
+</style>
+</head>
+<body>
+<div class="slide" id="slide">
+  <h1>Complete Model in One Page</h1>
+
+  <!-- ===================== ROW 1 ===================== -->
+  <!-- 1 STATE REBUILD -->
+  <div class="blk" style="left:20px;top:58px;height:300px">
+    <div class="hd"><span class="num">1</span><span class="lab">State rebuild</span></div>
+    <div class="ln">$b_t = 120-\ell_t$</div>
+    <div class="ln">$r_t=\mathit{bat}_t+\mathbf{1}[\text{wide or no-ball}]+e_t$<br>$\qquad\ +\,h_t+5\cdot\mathbf{1}[\text{penalty}]$</div>
+    <div class="ln">$h_t=1$ if rotated, $4$ if not, $1$ if unobservable</div>
+    <div class="ln">$T=R_2+m+1$ <span class="tx">(chase lost by $m$ runs)</span></div>
+    <div class="ln">$T=R_2+1$ <span class="tx">(tie)</span></div>
+    <div class="ln">$T=\mathrm{clip}(R_1+1;\ R_2-x_{\mathrm{last}}+1,\ R_2)$ <span class="tx">(chase won)</span></div>
+    <div class="ln">$N_t=T-S_{t-1}$, $\ $ required rate $=6N_t/b_t$</div>
+    <div class="out"><b>OUT</b>$\textcolor{#ff5c9a}{s=(b,\,w,\,n,\ \text{innings},\ \text{context})}$</div>
+  </div>
+
+  <!-- 2 NEXT-BALL MODEL -->
+  <div class="blk" style="left:383px;top:58px;height:300px">
+    <div class="hd"><span class="num">2</span><span class="lab">Next-ball model</span></div>
+    <div class="ln">$p(o\mid s)=\operatorname{softmax}_o\!\big(\theta_o\cdot x(s)\big)$</div>
+    <div class="tx">multinomial logistic regression, one model per innings, inverse regularisation $C_{\mathrm{reg}}=0.1$</div>
+    <div class="ln" style="margin-top:6px">$o\in\{\text{wkt},0,1,2,3,4,6\}_{\text{legal}}$</div>
+    <div class="ln">$\phantom{o\in}\cup\,\{1,2,3{+}\}_{\text{illegal}}$ $\quad$ (10 outcomes)</div>
+    <div class="tx" style="margin-top:6px">Inputs $x(s)$: over band, wickets lost, venue scoring tier, competition group, impact-player rule; innings 2 adds required-rate band</div>
+    <div class="out"><b>OUT</b>$\textcolor{#ff5c9a}{p(o\mid s)}$</div>
+  </div>
+
+  <!-- 3 WIN PROBABILITY -->
+  <div class="blk" style="left:746px;top:58px;height:300px">
+    <div class="hd"><span class="num">3</span><span class="lab">Win probability</span></div>
+    <div class="ln">$WP_2(b,w,n)=\sum_{o}p(o\mid b,w,n)\,WP_2(s'_o)$</div>
+    <div class="ln" style="margin-top:2px">$WP_2=1$ if $n\le0$</div>
+    <div class="ln">$WP_2=0.5$ if ($b=0$ and $n=1$) or all out with scores level</div>
+    <div class="ln">$WP_2=0$ if $b=0$ or $w=10$ otherwise</div>
+    <div class="ln" style="margin-top:3px">$WP_1(b,w,r)=\sum_{x}D_{b,w}(x)\,\big[1-WP_2(120,0,r+x+1)\big]$</div>
+    <div class="tx">$D_{b,w}(x)$ = distribution of runs still to come</div>
+    <div class="ln" style="margin-top:3px">$\operatorname{logit}WP^{*}=a+c\,\operatorname{logit}WP$</div>
+    <div class="ln">Innings 1: $a=-0.0468$, $c=0.7332$</div>
+    <div class="ln">Innings 2: $a=0.1526$, $c=0.8042$</div>
+    <div class="out"><b>OUT</b>$\textcolor{#ff5c9a}{WP^{*}}$</div>
+  </div>
+
+  <!-- 4 LEVERAGE -->
+  <div class="blk" style="left:1109px;top:58px;height:300px">
+    <div class="hd"><span class="num">4</span><span class="lab">Leverage and pressure flag</span></div>
+    <div class="ln">$egin{aligned}\mathrm{swing}(s)&=\sum_{o}p(o\mid s)\&\quadig|WP^{*}(s'_o)-WP^{*}(s)ig|\end{aligned}$</div>
+    <div class="ln">$LI(s)=\mathrm{swing}(s)\,/\,\overline{\mathrm{swing}}_{	ext{live}}$</div>
+    <div class="ln">$\overline{\mathrm{swing}}_{	ext{live}}=0.014414$</div>
+    <div class="ln">live ball: $0.02&lt;WP^{*}&lt;0.98$</div>
+    <div class="ln">$P=\mathbf{1}[\,LI\ge q_{0.80}\,]$, $\ q_{0.80}=1.2073$</div>
+    <div class="tx">$q_{0.80}$: 80th percentile of live-ball $LI$, pooled over both innings</div>
+    <svg id="inset" width="288" height="86" style="position:absolute;left:10px;top:188px"></svg>
+    <div class="out"><b>OUT</b>$\textcolor{#ff5c9a}{\mathrm{swing}(s),\ LI,\ P}$</div>
+  </div>
+
+  <!-- ===================== ROW 2 ===================== -->
+  <!-- 5 BALL VALUE -->
+  <div class="blk" style="left:20px;top:410px;height:258px">
+    <div class="hd"><span class="num">5</span><span class="lab">Ball value and credit</span></div>
+    <div class="ln">$\mathrm{d}WP=WP^{*}(\text{after})-WP^{*}(\text{before})$</div>
+    <div class="tx">batting side's view</div>
+    <div class="ln">$\mathrm{d}WP_0=\mathrm{d}WP-\overline{\mathrm{d}WP}_{\text{bin}}$</div>
+    <div class="tx">bin = innings × over band × wickets band × $LI$ band</div>
+    <div class="ln">$\textcolor{#ff5c9a}{v}=\mathrm{d}WP_0\,/\,\mathrm{swing}(s_{\text{before}})$</div>
+    <table class="cr">
+      <tr><td>bat runs</td><td>striker +, bowler −</td></tr>
+      <tr><td>wide</td><td>bowler only</td></tr>
+      <tr><td>byes / leg-byes</td><td>dot ball</td></tr>
+      <tr><td>bowled, caught, LBW, hit wicket, stumped</td><td>bowler +, dismissed batter −</td></tr>
+      <tr><td>run-out</td><td>batter −, bowler not credited</td></tr>
+    </table>
+    <div class="out"><b>OUT</b>$\textcolor{#ff5c9a}{v}$</div>
+  </div>
+
+  <!-- 6 RATING REGRESSION -->
+  <div class="blk" style="left:383px;top:410px;height:258px">
+    <div class="hd"><span class="num">6</span><span class="lab">Rating regression (ridge)</span></div>
+    <div class="tx">one fit per role; whole matches are the CV unit</div>
+    <div class="ln">Batting: $v=\mathrm{ctx}+B_i+P\,C_i-(W_j+P\,K_j)+\varepsilon$</div>
+    <div class="ln">Bowling: $v=\mathrm{ctx}+W_j+P\,K_j-(B_i+P\,C_i)+\varepsilon$</div>
+    <div class="tx">$i$ = batter, $j$ = bowler; ctx = fixed effects (innings × phase × $P$, competition group)</div>
+    <div class="ln" style="margin-top:3px">$\min\ \sum(v-\hat v)^2+\lambda_B\sum(B^2+W^2)$<br>$\qquad+\ \lambda_C\sum(C^2+K^2)+0.001\lVert\mathrm{ctx}\rVert^2$</div>
+    <div class="ln">$\lambda_B=300$, $\ \lambda_C=3000$</div>
+    <div class="tx">5-fold CV, whole matches held out</div>
+    <div class="ln">$\textcolor{#ff5c9a}{R_i=B_i+C_i}$</div>
+    <div class="out"><b>OUT</b>$\textcolor{#ff5c9a}{B_i,\ C_i,\ R_i}$</div>
+  </div>
+
+  <!-- 7 UNCERTAINTY AND RANKING -->
+  <div class="blk" style="left:746px;top:410px;height:258px">
+    <div class="hd"><span class="num">7</span><span class="lab">Uncertainty and ranking</span></div>
+    <div class="tx">resample whole matches with replacement, 300 times; refit; record $R_i^{(k)}$, $k=1,\dots,300$</div>
+    <div class="ln">$\textcolor{#ff5c9a}{F_i}=Q_{0.10}\{R_i^{(1)},\dots,R_i^{(300)}\}$</div>
+    <div class="tx" style="margin-top:3px">Eligibility: ≥ 120 pressure balls and ≥ 15 matches, active in 2025 or 2026</div>
+    <div class="ln" style="margin-top:3px">remove player if $Q_{0.90}\{C_i^{(k)}\}&lt;0$</div>
+    <div class="ln">rank by $F_i$ descending</div>
+    <div class="tx">tie-break: delivery rate, then pressure-ball count</div>
+    <div class="out"><b>OUT</b>$\textcolor{#ff5c9a}{F_i}$, ranked lists</div>
+  </div>
+
+  <!-- 8 VALIDATION -->
+  <div class="blk" style="left:1109px;top:410px;height:258px">
+    <div class="hd"><span class="num">8</span><span class="lab">Validation</span></div>
+    <div class="ln">$r_{SB}=2r/(1+r)$ <span class="tx">(Spearman-Brown, mean of 200 random match splits)</span></div>
+    <div class="tx">pressure rating <b style="color:#fff">0.54</b> (batters), <b style="color:#fff">0.66</b> (bowlers); shift only <b style="color:#fff">0.13</b>, <b style="color:#fff">0.15</b></div>
+    <div class="ln" style="margin-top:3px">$\operatorname{var}(B{+}C)=\operatorname{var}(B)+\operatorname{var}(C)+2\operatorname{cov}(B,C)$</div>
+    <div class="tx">baseline / shift / covariance: batters <b style="color:#fff">91.5% / 1.7% / 6.8%</b>; bowlers <b style="color:#fff">94.7% / 1.5% / 3.8%</b></div>
+    <div class="tx" style="margin-top:3px">season-to-season $r$ (2022–24 vs 2025–26): batters <b style="color:#fff">0.048</b>, bowlers <b style="color:#fff">0.511</b></div>
+    <div class="tx">permutation test $p$ (shift spread): batters <b style="color:#fff">0.062</b>, bowlers <b style="color:#fff">0.048</b></div>
+    <div class="tx">sensitivity: <b style="color:#fff">14</b> variants, median top-10 overlap <b style="color:#fff">9 of 10</b></div>
+  </div>
+
+  <!-- final output -->
+  <div class="final" style="left:746px;top:674px;width:310px;height:26px">Top 10 batters, Top 10 bowlers</div>
+
+  <!-- ===================== ARROWS ===================== -->
+  <svg class="arr" width="1440" height="810" viewBox="0 0 1440 810">
+    <defs>
+      <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0,0 L10,5 L0,10 z" fill="#8fb0ff"/></marker>
+      <marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0,0 L10,5 L0,10 z" fill="#ff5c9a"/></marker>
+    </defs>
+    <g fill="none" stroke="#8fb0ff" stroke-width="1.6" marker-end="url(#ah)">
+      <path d="M330,102 H383"/>                                   <!-- 1>2 -->
+      <path d="M693,102 H746"/>                                   <!-- 2>3 -->
+      <path d="M1056,102 H1109"/>                                 <!-- 3>4 -->
+      <path d="M538,58 V50 H1264 V58"/>                           <!-- 2>4 -->
+      <path d="M936,358 V366 H130 V410"/>                         <!-- 3>5 -->
+      <path d="M1159,358 V377 H220 V410"/>                        <!-- 4>5 -->
+      <path d="M1219,358 V388 H573 V410"/>                        <!-- 4>6 -->
+      <path d="M330,539 H383"/>                                   <!-- 5>6 -->
+      <path d="M693,539 H746"/>                                   <!-- 6>7 -->
+      <path d="M901,668 V674" stroke="#ff5c9a" marker-end="url(#ap)"/>   <!-- 7>final -->
+    </g>
+    <g fill="none" stroke="#a9bde8" stroke-width="1.4" stroke-dasharray="5 3" marker-end="url(#ah)">
+      <path d="M1379,410 V358"/>                                  <!-- 8>4 -->
+      <path d="M1179,410 V399 H653 V410"/>                        <!-- 8>6 -->
+      <path d="M1109,539 H1056"/>                                 <!-- 8>7 -->
+    </g>
+  </svg>
+
+  <!-- arrow labels -->
+  <div class="lb" style="left:356px;top:90px">$s$</div>
+  <div class="lb" style="left:719px;top:90px">$p(o\mid s)$</div>
+  <div class="lb" style="left:1082px;top:90px">$\textcolor{#ff5c9a}{WP^{*}}$</div>
+  <div class="lb" style="left:900px;top:50px">$p(o\mid s)$</div>
+  <div class="lb" style="left:520px;top:366px">$WP^{*}$ (before, after)</div>
+  <div class="lb" style="left:700px;top:377px">$\mathrm{swing}(s)$</div>
+  <div class="lb" style="left:930px;top:388px">$\textcolor{#ff5c9a}{P}$ (pressure flag)</div>
+  <div class="lb" style="left:860px;top:399px">reliability</div>
+  <div class="lb r" style="left:1372px;top:380px">separation checks</div>
+  <div class="lb" style="left:356px;top:526px">$\textcolor{#ff5c9a}{v}$</div>
+  <div class="lb" style="left:719px;top:520px">$B_i,\,C_i,$<br>$R_i$</div>
+  <div class="lb" style="left:1082px;top:526px">stability</div>
+
+  <!-- ===================== SYMBOL KEY ===================== -->
+  <div class="keyt">SYMBOL KEY</div>
+  <div class="key">
+    <div>$s$ state</div>
+    <div>$b$ balls left</div>
+    <div>$w$ wickets lost</div>
+    <div>$n$ runs required</div>
+    <div>$o$ ball outcome</div>
+    <div>$p(o\mid s)$ outcome probability</div>
+    <div>$s'_o$ state after outcome $o$</div>
+
+    <div>$WP$ win probability</div>
+    <div>$WP^{*}$ recalibrated $WP$</div>
+    <div>$LI$ leverage index</div>
+    <div>$P$ pressure flag</div>
+    <div>$v$ ball value</div>
+    <div>$B,W$ baselines</div>
+    <div>$C,K$ pressure shifts</div>
+
+    <div>$R_i$ pressure rating</div>
+    <div>$F_i$ floor</div>
+    <div>$t$ ball index; $\ell_t$ legal balls before $t$</div>
+    <div>$\mathit{bat}_t$ runs off the bat</div>
+    <div>$e_t$ recorded extra runs</div>
+    <div>$h_t$ imputed bye / leg-bye runs</div>
+    <div>$r_t$ team runs on ball $t$</div>
+
+    <div>$S_t$ score after ball $t$</div>
+    <div>$T$ target; $N_t$ runs required</div>
+    <div>$R_1,R_2$ innings totals</div>
+    <div>$m$ winning margin (runs)</div>
+    <div>$x_{\mathrm{last}}$ runs on last chase ball</div>
+    <div>$\theta_o$ coefficients; $x(s)$ features</div>
+    <div>$C_{\mathrm{reg}}$ inverse regularisation</div>
+
+    <div>$D_{b,w}(x)$ runs-to-come distribution</div>
+    <div>$x$ runs still to come</div>
+    <div>$r$ runs scored so far (in $WP_1$)</div>
+    <div>$a,c$ recalibration intercept, slope</div>
+    <div>$\mathrm{swing}$ expected $|\Delta WP^{*}|$; $\overline{\mathrm{swing}}_{	ext{live}}$ its live-ball mean</div>
+    <div>$q_{0.80}$ 80th percentile of $LI$</div>
+    <div>$\mathrm{d}WP$ change in $WP^{*}$</div>
+
+    <div>$\mathrm{d}WP_0$ $\mathrm{d}WP$ minus bin mean</div>
+    <div>$i$ batter; $j$ bowler</div>
+    <div>ctx context fixed effects; $\varepsilon$ error</div>
+    <div>$\lambda_B,\lambda_C$ ridge penalties</div>
+    <div>$k$ resample index; $Q_q$ quantile</div>
+    <div>$r$ split-half correlation (in $r_{SB}$)</div>
+    <div>$\operatorname{var},\operatorname{cov}$ variance, covariance</div>
+  </div>
+</div>
+
+<script>
+/* heat-grid inset: mean LI of live innings-2 balls by balls left x runs required (project data, 20+ balls per cell) */
+var LI = [
+[6.47,4.74,3.44,2.27,null,null,null,null,null,null],
+[1.06,1.58,2.37,2.8,2.14,1.01,null,null,null,null],
+[null,1.16,0.83,1.22,2.0,1.66,1.01,null,null,null],
+[null,null,0.97,0.62,1.07,1.69,1.41,0.94,null,null],
+[null,null,null,0.45,0.61,1.08,1.31,1.07,0.63,null],
+[null,null,null,null,0.46,0.7,1.09,1.13,0.77,null],
+[null,null,null,null,0.43,0.49,0.84,1.03,0.88,0.58],
+[null,null,null,null,null,0.37,0.75,1.19,1.27,0.87],
+[null,null,null,null,null,null,0.44,0.94,1.26,1.02],
+[null,null,null,null,null,null,0.23,0.68,1.1,1.03]];
+(function(){
+  var svg=document.getElementById('inset'), NS='http://www.w3.org/2000/svg', cut=1.2073;
+  var x0=30,y0=2,cw=11.5,ch=6.8;
+  function el(n,a,t){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(t)e.textContent=t;svg.appendChild(e);return e;}
+  function col(v){var u=Math.min(v/3.2,1);var r=Math.round(24+u*190),g=Math.round(52+u*170),b=Math.round(110+u*120);return 'rgb('+r+','+g+','+b+')';}
+  for(var bi=0;bi<10;bi++)for(var ri=0;ri<10;ri++){
+    var v=LI[bi][ri]; if(v===null)continue;
+    var cx=x0+(9-bi)*cw, cy=y0+(9-ri)*ch;
+    el('rect',{x:cx,y:cy,width:cw-0.6,height:ch-0.6,fill:col(v)});
+    if(v>=cut) el('rect',{x:cx,y:cy,width:cw-0.6,height:ch-0.6,fill:'none',stroke:'#ff5c9a','stroke-width':1.3});
+  }
+  el('text',{x:x0,y:y0+10*ch+10,fill:'#a9bde8','font-size':'9.5'},'balls left: 120');
+  el('text',{x:x0+10*cw,y:y0+10*ch+10,fill:'#a9bde8','font-size':'9.5','text-anchor':'end'},'0');
+  el('text',{x:x0-3,y:y0+8,fill:'#a9bde8','font-size':'9.5','text-anchor':'end'},'n high');
+  el('text',{x:x0-3,y:y0+10*ch,fill:'#a9bde8','font-size':'9.5','text-anchor':'end'},'0');
+  el('rect',{x:x0+10*cw+14,y:y0+2,width:9,height:9,fill:'none',stroke:'#ff5c9a','stroke-width':1.3});
+  el('text',{x:x0+10*cw+27,y:y0+10,fill:'#dbe6ff','font-size':'10'},'LI ≥ q');
+  el('text',{x:x0+10*cw+27,y:y0+10+11,fill:'#dbe6ff','font-size':'7.5'},'0.80');
+  el('text',{x:x0+10*cw+14,y:y0+34,fill:'#a9bde8','font-size':'9.5'},'mean LI per cell,');
+  el('text',{x:x0+10*cw+14,y:y0+45,fill:'#a9bde8','font-size':'9.5'},'live innings-2');
+  el('text',{x:x0+10*cw+14,y:y0+56,fill:'#a9bde8','font-size':'9.5'},'balls');
+})();
+window.addEventListener('DOMContentLoaded',function(){
+  var go=function(){ if(window.renderMathInElement){
+    renderMathInElement(document.getElementById('slide'),{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+    document.title='Complete Model in One Page';
+  } else setTimeout(go,50); };
+  go();
+});
+</script>
+</body>
+</html>
