@@ -1,0 +1,298 @@
+RR PRESSURE-GAP STAGE: PRINTED TABLES (main run, then sensitivity). Source: stage9b_log.txt and stage9c_log.txt.
+
+[   14s] RR id 3; RR innings (matches) 75; target slots [('bowl', 'death|pace'), ('bowl', 'middle|pace'), ('bat', '7+')]
+
+=== 0. RR identification ===
+| item                                                                         | value       |
+|:-----------------------------------------------------------------------------|:------------|
+| RR team id (teams.csv name match)                                            | 3           |
+| RR IPL matches 2022-26 in matches.csv                                        | 77          |
+| excluded by Stage 1 cleaning (no ball data / rain)                           | 2           |
+| RR IPL matches in the rating sample (used here)                              | 75          |
+| RR players in playing_eleven for those matches                               | 61          |
+| RR players listed in mapping, IPL squads 2022-26 (union)                     | 69          |
+| RR players listed in mapping, IPL 2026 squad                                 | 27          |
+| RR live balls batting (rating sample)                                        | 8251        |
+| RR live balls bowling (rating sample)                                        | 8635        |
+| RR PRESSURE deliveries batting                                               | 1688        |
+| RR PRESSURE deliveries bowling                                               | 2024        |
+| RR PRESSURE deliveries total (batting + bowling, disjoint)                   | 3712        |
+| of the batting ones: balls faced excluding wides (rows behind batting cells) | 1613        |
+| of the bowling ones: rows behind bowling cells                               | 2024        |
+| league IPL pressure deliveries in rating sample (all teams)                  | 15714       |
+| RR pressure deliveries per RR match (batting / bowling)                      | 22.5 / 27.0 |
+
+=== RR matches excluded by Stage-1 cleaning ===
+|   match_id | match_date   | result                          | drop_reason   |
+|-----------:|:-------------|:--------------------------------|:--------------|
+|      31288 | 2024-05-19   | Match Abandoned                 | no ball data  |
+|      50137 | 2026-04-07   | Rajasthan Royals Won by 27 runs | rain          |
+
+=== 1a. RR batting by position band (value = opposition-adjusted v per ball; gap vs rest-of-IPL; 80% interval p10-p90, 95% p025-p975) ===
+| slot        | state                               |   rr_balls |   rr_balls_per_innings |   rr_value_per_ball |   league_par_per_ball |   gap_vs_par |   gap_p10 |   gap_p90 |   gap_p025 |   gap_p975 | call                                                     |
+|:------------|:------------------------------------|-----------:|-----------------------:|--------------------:|----------------------:|-------------:|----------:|----------:|-----------:|-----------:|:---------------------------------------------------------|
+| 1-2         | pressure                            |        518 |                  6.907 |               0.132 |                 0.049 |        0.083 |    -0.096 |     0.208 |     -0.226 |      0.286 | not distinguishable from par                             |
+| 1-2         | ordinary                            |       2619 |                 34.920 |               0.106 |                 0.047 |        0.059 |    -0.002 |     0.103 |     -0.029 |      0.130 | not distinguishable from par                             |
+| 1-2         | shift (pressure gap - ordinary gap) |        518 |                nan     |             nan     |               nan     |        0.024 |    -0.150 |     0.173 |     -0.288 |      0.227 | not distinguishable from zero shift                      |
+| 3-4         | pressure                            |        509 |                  6.787 |               0.023 |                 0.051 |       -0.028 |    -0.126 |     0.050 |     -0.188 |      0.086 | not distinguishable from par                             |
+| 3-4         | ordinary                            |       2108 |                 28.107 |               0.069 |                 0.065 |        0.004 |    -0.053 |     0.060 |     -0.081 |      0.082 | not distinguishable from par                             |
+| 3-4         | shift (pressure gap - ordinary gap) |        509 |                nan     |             nan     |               nan     |       -0.032 |    -0.151 |     0.054 |     -0.238 |      0.108 | not distinguishable from zero shift                      |
+| 5-6         | pressure                            |        445 |                  5.933 |               0.064 |                 0.008 |        0.056 |    -0.048 |     0.150 |     -0.100 |      0.210 | not distinguishable from par                             |
+| 5-6         | ordinary                            |       1046 |                 13.947 |              -0.034 |                 0.043 |       -0.077 |    -0.151 |    -0.010 |     -0.196 |      0.017 | below par (80% interval excludes 0; 95% does not)        |
+| 5-6         | shift (pressure gap - ordinary gap) |        445 |                nan     |             nan     |               nan     |        0.133 |     0.021 |     0.263 |     -0.070 |      0.334 | above zero shift (80% interval excludes 0; 95% does not) |
+| 7+          | pressure                            |        141 |                  1.880 |              -0.127 |                 0.014 |       -0.141 |    -0.284 |    -0.010 |     -0.372 |      0.046 | below par (80% interval excludes 0; 95% does not)        |
+| 7+          | ordinary                            |        546 |                  7.280 |              -0.177 |                -0.013 |       -0.165 |    -0.268 |    -0.071 |     -0.336 |     -0.020 | below par (95% interval excludes 0)                      |
+| 7+          | shift (pressure gap - ordinary gap) |        141 |                nan     |             nan     |               nan     |        0.024 |    -0.132 |     0.175 |     -0.222 |      0.268 | not distinguishable from zero shift                      |
+| all batting | pressure                            |       1613 |                 21.507 |               0.056 |                 0.035 |        0.021 |    -0.049 |     0.077 |     -0.092 |      0.107 | not distinguishable from par                             |
+| all batting | ordinary                            |       6319 |                 84.253 |               0.046 |                 0.046 |       -0.000 |    -0.034 |     0.028 |     -0.051 |      0.044 | not distinguishable from par                             |
+| all batting | shift (pressure gap - ordinary gap) |       1613 |                nan     |             nan     |               nan     |        0.021 |    -0.056 |     0.080 |     -0.090 |      0.120 | not distinguishable from zero shift                      |
+
+=== 1b. RR bowling by phase x pace/spin cells and marginals ===
+| slot            | state                               |   rr_balls |   rr_balls_per_innings |   rr_value_per_ball |   league_par_per_ball |   gap_vs_par |   gap_p10 |   gap_p90 |   gap_p025 |   gap_p975 | call                                                     |
+|:----------------|:------------------------------------|-----------:|-----------------------:|--------------------:|----------------------:|-------------:|----------:|----------:|-----------:|-----------:|:---------------------------------------------------------|
+| powerplay|pace  | pressure                            |        417 |                  5.560 |               0.166 |                 0.057 |        0.109 |    -0.042 |     0.251 |     -0.093 |      0.364 | not distinguishable from par                             |
+| powerplay|pace  | ordinary                            |       1915 |                 25.533 |               0.109 |                 0.067 |        0.042 |    -0.015 |     0.097 |     -0.040 |      0.130 | not distinguishable from par                             |
+| powerplay|pace  | shift (pressure gap - ordinary gap) |        417 |                nan     |             nan     |               nan     |        0.067 |    -0.084 |     0.226 |     -0.146 |      0.325 | not distinguishable from zero shift                      |
+| powerplay|spin  | pressure                            |         96 |                  1.280 |               0.070 |                 0.168 |       -0.098 |    -0.280 |     0.062 |     -0.371 |      0.148 | not distinguishable from par                             |
+| powerplay|spin  | ordinary                            |        319 |                  4.253 |               0.114 |                -0.005 |        0.119 |     0.013 |     0.204 |     -0.038 |      0.287 | above par (80% interval excludes 0; 95% does not)        |
+| powerplay|spin  | shift (pressure gap - ordinary gap) |         96 |                nan     |             nan     |               nan     |       -0.217 |    -0.438 |    -0.013 |     -0.531 |      0.092 | below zero shift (80% interval excludes 0; 95% does not) |
+| middle|pace     | pressure                            |        362 |                  4.827 |              -0.030 |                 0.032 |       -0.062 |    -0.160 |     0.076 |     -0.218 |      0.117 | not distinguishable from par                             |
+| middle|pace     | ordinary                            |       1093 |                 14.573 |              -0.009 |                 0.051 |       -0.060 |    -0.127 |     0.014 |     -0.148 |      0.049 | not distinguishable from par                             |
+| middle|pace     | shift (pressure gap - ordinary gap) |        362 |                nan     |             nan     |               nan     |       -0.002 |    -0.137 |     0.144 |     -0.192 |      0.230 | not distinguishable from zero shift                      |
+| middle|spin     | pressure                            |        597 |                  7.960 |               0.167 |                 0.128 |        0.039 |    -0.068 |     0.126 |     -0.141 |      0.185 | not distinguishable from par                             |
+| middle|spin     | ordinary                            |       1942 |                 25.893 |               0.061 |                 0.118 |       -0.057 |    -0.107 |    -0.013 |     -0.147 |      0.016 | below par (80% interval excludes 0; 95% does not)        |
+| middle|spin     | shift (pressure gap - ordinary gap) |        597 |                nan     |             nan     |               nan     |        0.096 |    -0.026 |     0.210 |     -0.109 |      0.278 | not distinguishable from zero shift                      |
+| death|pace      | pressure                            |        398 |                  5.307 |              -0.025 |                 0.055 |       -0.080 |    -0.171 |     0.009 |     -0.213 |      0.074 | not distinguishable from par                             |
+| death|pace      | ordinary                            |        984 |                 13.120 |               0.085 |                 0.049 |        0.035 |    -0.010 |     0.098 |     -0.039 |      0.130 | not distinguishable from par                             |
+| death|pace      | shift (pressure gap - ordinary gap) |        398 |                nan     |             nan     |               nan     |       -0.115 |    -0.232 |    -0.014 |     -0.265 |      0.069 | below zero shift (80% interval excludes 0; 95% does not) |
+| death|spin      | pressure                            |        154 |                  2.053 |               0.298 |                 0.074 |        0.224 |     0.032 |     0.421 |     -0.065 |      0.499 | above par (80% interval excludes 0; 95% does not)        |
+| death|spin      | ordinary                            |        358 |                  4.773 |               0.025 |                 0.122 |       -0.097 |    -0.202 |     0.027 |     -0.259 |      0.078 | not distinguishable from par                             |
+| death|spin      | shift (pressure gap - ordinary gap) |        154 |                nan     |             nan     |               nan     |        0.321 |     0.105 |     0.514 |     -0.002 |      0.633 | above zero shift (80% interval excludes 0; 95% does not) |
+| phase:powerplay | pressure                            |        513 |                  6.840 |               0.148 |                 0.076 |        0.073 |    -0.049 |     0.202 |     -0.090 |      0.285 | not distinguishable from par                             |
+| phase:powerplay | ordinary                            |       2234 |                 29.787 |               0.109 |                 0.056 |        0.054 |     0.003 |     0.102 |     -0.019 |      0.131 | above par (80% interval excludes 0; 95% does not)        |
+| phase:powerplay | shift (pressure gap - ordinary gap) |        513 |                nan     |             nan     |               nan     |        0.019 |    -0.103 |     0.163 |     -0.155 |      0.233 | not distinguishable from zero shift                      |
+| phase:middle    | pressure                            |        959 |                 12.787 |               0.093 |                 0.083 |        0.010 |    -0.067 |     0.087 |     -0.115 |      0.122 | not distinguishable from par                             |
+| phase:middle    | ordinary                            |       3035 |                 40.467 |               0.036 |                 0.089 |       -0.053 |    -0.094 |    -0.010 |     -0.114 |      0.013 | below par (80% interval excludes 0; 95% does not)        |
+| phase:middle    | shift (pressure gap - ordinary gap) |        959 |                nan     |             nan     |               nan     |        0.063 |    -0.027 |     0.151 |     -0.077 |      0.196 | not distinguishable from zero shift                      |
+| phase:death     | pressure                            |        552 |                  7.360 |               0.065 |                 0.058 |        0.007 |    -0.086 |     0.086 |     -0.120 |      0.139 | not distinguishable from par                             |
+| phase:death     | ordinary                            |       1342 |                 17.893 |               0.069 |                 0.062 |        0.007 |    -0.036 |     0.065 |     -0.066 |      0.102 | not distinguishable from par                             |
+| phase:death     | shift (pressure gap - ordinary gap) |        552 |                nan     |             nan     |               nan     |        0.000 |    -0.108 |     0.101 |     -0.162 |      0.172 | not distinguishable from zero shift                      |
+| type:pace       | pressure                            |       1177 |                 15.693 |               0.041 |                 0.049 |       -0.008 |    -0.080 |     0.064 |     -0.112 |      0.111 | not distinguishable from par                             |
+| type:pace       | ordinary                            |       3992 |                 53.227 |               0.070 |                 0.057 |        0.013 |    -0.023 |     0.052 |     -0.044 |      0.073 | not distinguishable from par                             |
+| type:pace       | shift (pressure gap - ordinary gap) |       1177 |                nan     |             nan     |               nan     |       -0.021 |    -0.101 |     0.058 |     -0.143 |      0.110 | not distinguishable from zero shift                      |
+| type:spin       | pressure                            |        847 |                 11.293 |               0.180 |                 0.128 |        0.052 |    -0.036 |     0.124 |     -0.089 |      0.167 | not distinguishable from par                             |
+| type:spin       | ordinary                            |       2619 |                 34.920 |               0.062 |                 0.100 |       -0.038 |    -0.080 |    -0.001 |     -0.109 |      0.020 | below par (80% interval excludes 0; 95% does not)        |
+| type:spin       | shift (pressure gap - ordinary gap) |        847 |                nan     |             nan     |               nan     |        0.090 |    -0.013 |     0.178 |     -0.064 |      0.240 | not distinguishable from zero shift                      |
+| all bowling     | pressure                            |       2024 |                 26.987 |               0.099 |                 0.074 |        0.025 |    -0.035 |     0.086 |     -0.071 |      0.136 | not distinguishable from par                             |
+| all bowling     | ordinary                            |       6611 |                 88.147 |               0.067 |                 0.072 |       -0.005 |    -0.030 |     0.025 |     -0.048 |      0.039 | not distinguishable from par                             |
+| all bowling     | shift (pressure gap - ordinary gap) |       2024 |                nan     |             nan     |               nan     |        0.030 |    -0.041 |     0.097 |     -0.080 |      0.151 | not distinguishable from zero shift                      |
+
+=== 2. RR pressure gaps (rank = below-par slots by gap x pressure balls per RR innings; d80/d95 = interval excludes 0) ===
+|   rank_below_par_slots | side    | slot           |   rr_pressure_balls |   rr_pressure_balls_per_innings |   gap_vs_par |   gap_p10 |   gap_p90 |   p_gap_below0 |   priority_value_per_innings |   priority_p10 |   priority_p90 |   winprob_vs_par_per_innings |   p_in_boot_top3 | d80   | d95   | coverage_status                                                     |
+|-----------------------:|:--------|:---------------|--------------------:|--------------------------------:|-------------:|----------:|----------:|---------------:|-----------------------------:|---------------:|---------------:|-----------------------------:|-----------------:|:------|:------|:--------------------------------------------------------------------|
+|                  1.000 | bowling | death|pace     |                 398 |                           5.307 |       -0.080 |    -0.171 |     0.009 |          0.870 |                       -0.424 |         -0.888 |          0.043 |                       -0.022 |            0.723 | False | False | COVERED                                                             |
+|                  2.000 | bowling | middle|pace    |                 362 |                           4.827 |       -0.062 |    -0.160 |     0.076 |          0.710 |                       -0.298 |         -0.805 |          0.363 |                       -0.007 |            0.497 | False | False | OPEN: squad gate-clearer has slot sample but is not shown above par |
+|                  3.000 | batting | 7+             |                 141 |                           1.880 |       -0.141 |    -0.284 |    -0.010 |          0.917 |                       -0.265 |         -0.499 |         -0.020 |                       -0.032 |            0.510 | True  | False | OPEN: no gate-clearing squad player with a slot sample              |
+|                  4.000 | batting | 3-4            |                 509 |                           6.787 |       -0.028 |    -0.126 |     0.050 |          0.687 |                       -0.193 |         -0.818 |          0.329 |                       -0.007 |            0.477 | False | False | COVERED                                                             |
+|                  5.000 | bowling | powerplay|spin |                  96 |                           1.280 |       -0.098 |    -0.280 |     0.062 |          0.760 |                       -0.125 |         -0.321 |          0.087 |                       -0.003 |            0.230 | False | False | OPEN: squad gate-clearer has slot sample but is not shown above par |
+|                nan     | bowling | middle|spin    |                 597 |                           7.960 |        0.039 |    -0.068 |     0.126 |          0.323 |                        0.311 |         -0.499 |          1.077 |                        0.008 |            0.193 | False | False | OPEN: squad gate-clearer has slot sample but is not shown above par |
+|                nan     | batting | 5-6            |                 445 |                           5.933 |        0.056 |    -0.048 |     0.150 |          0.240 |                        0.333 |         -0.244 |          0.981 |                        0.012 |            0.103 | False | False | OPEN: squad gate-clearer has slot sample but is not shown above par |
+|                nan     | bowling | death|spin     |                 154 |                           2.053 |        0.224 |     0.032 |     0.421 |          0.063 |                        0.459 |          0.062 |          0.824 |                        0.016 |            0.013 | False | False | OPEN: squad gate-clearer has slot sample but is not shown above par |
+|                nan     | batting | 1-2            |                 518 |                           6.907 |        0.083 |    -0.096 |     0.208 |          0.300 |                        0.575 |         -0.611 |          1.523 |                        0.022 |            0.180 | False | False | OPEN: squad gate-clearer has slot sample but is not shown above par |
+|                nan     | bowling | powerplay|pace |                 417 |                           5.560 |        0.109 |    -0.042 |     0.251 |          0.177 |                        0.608 |         -0.232 |          1.306 |                        0.010 |            0.073 | False | False | OPEN: squad gate-clearer has slot sample but is not shown above par |
+
+=== 3. Candidates with >=40 pressure balls in a target slot (all 40 listed players were evaluated; the rest are suppressed in the CSV). supported = 10th pct of excess > 0 ===
+| target_slot         |   rr_gap_rank |   rr_gap_vs_par |   rr_gap_p_below0 | list_role   |   list_rank | name              | nationality   | nationality_class   | slot_record   |   n_pressure_balls |   n_ipl |   n_t20i |   excess_per_ball |    p10 |    p90 |   p025 |   p975 |   excess_winprob_per_100_balls | supported   |   rank_in_class_among_supported | rr_2026_squad   | rr_any_ipl_2022_26   |
+|:--------------------|--------------:|----------------:|------------------:|:------------|------------:|:------------------|:--------------|:--------------------|:--------------|-------------------:|--------:|---------:|------------------:|-------:|-------:|-------:|-------:|-------------------------------:|:------------|--------------------------------:|:----------------|:---------------------|
+| batting:7+          |         3.000 |          -0.141 |             0.917 | bowl        |           3 | Rashid Khan       | Afghanistan   | overseas            | both          |                 97 |      80 |       17 |             0.311 |  0.174 |  0.427 |  0.040 |  0.478 |                          1.848 | True        |                           1.000 | False           | False                |
+| batting:7+          |         3.000 |          -0.141 |             0.917 | bowl        |          15 | Mohammad Nawaz    | Pakistan      | overseas            | T20I-only     |                 44 |       0 |       44 |             0.312 |  0.046 |  0.462 | -0.535 |  0.531 |                          1.354 | True        |                           2.000 | False           | False                |
+| batting:7+          |         3.000 |          -0.141 |             0.917 | bowl        |           8 | Axar Patel        | India         | Indian              | both          |                122 |      77 |       45 |             0.026 | -0.183 |  0.179 | -0.291 |  0.284 |                         -0.090 | False       |                         nan     | False           | False                |
+| batting:7+          |         3.000 |          -0.141 |             0.917 | bowl        |           6 | Wanindu Hasaranga | Sri Lanka     | overseas            | both          |                 61 |      22 |       39 |             0.015 | -0.301 |  0.311 | -0.552 |  0.475 |                         -0.540 | False       |                         nan     | False           | True                 |
+| bowling:death|pace  |         1.000 |          -0.080 |             0.870 | bowl        |          18 | Arshdeep Singh    | India         | Indian              | both          |                274 |     173 |      101 |             0.132 |  0.015 |  0.242 | -0.039 |  0.279 |                          0.779 | True        |                           1.000 | False           | False                |
+| bowling:death|pace  |         1.000 |          -0.080 |             0.870 | bowl        |           5 | Josh Hazlewood    | Australia     | overseas            | both          |                 93 |      77 |       16 |             0.360 |  0.158 |  0.558 |  0.063 |  0.654 |                          1.831 | True        |                           1.000 | False           | False                |
+| bowling:death|pace  |         1.000 |          -0.080 |             0.870 | bowl        |          12 | Bhuvneshwar Kumar | India         | Indian              | both          |                166 |      95 |       71 |             0.002 | -0.133 |  0.120 | -0.222 |  0.184 |                          0.465 | False       |                         nan     | False           | False                |
+| bowling:death|pace  |         1.000 |          -0.080 |             0.870 | bowl        |           7 | Jasprit Bumrah    | India         | Indian              | both          |                 77 |      72 |        5 |             0.005 | -0.158 |  0.213 | -0.243 |  0.328 |                          0.264 | False       |                         nan     | False           | False                |
+| bowling:death|pace  |         1.000 |          -0.080 |             0.870 | bowl        |          19 | Haris Rauf        | Pakistan      | overseas            | T20I-only     |                 92 |       0 |       92 |            -0.049 | -0.226 |  0.124 | -0.302 |  0.216 |                         -0.406 | False       |                         nan     | False           | False                |
+| bowling:death|pace  |         1.000 |          -0.080 |             0.870 | bowl        |          16 | Trent Boult       | New Zealand   | overseas            | both          |                 79 |      70 |        9 |            -0.035 | -0.249 |  0.210 | -0.370 |  0.356 |                         -0.043 | False       |                         nan     | False           | True                 |
+| bowling:death|pace  |         1.000 |          -0.080 |             0.870 | bowl        |          20 | Mustafizur Rahman | Bangladesh    | overseas            | both          |                 79 |      32 |       47 |            -0.172 | -0.325 |  0.043 | -0.470 |  0.137 |                         -0.903 | False       |                         nan     | False           | False                |
+| bowling:death|pace  |         1.000 |          -0.080 |             0.870 | bowl        |          17 | Kagiso Rabada     | South Africa  | overseas            | both          |                 77 |      70 |        7 |            -0.249 | -0.445 | -0.065 | -0.531 |  0.028 |                         -0.623 | False       |                         nan     | False           | False                |
+| bowling:middle|pace |         2.000 |          -0.062 |             0.710 | bowl        |          18 | Arshdeep Singh    | India         | Indian              | both          |                150 |     105 |       45 |             0.204 |  0.051 |  0.378 | -0.044 |  0.520 |                          0.422 | True        |                           1.000 | False           | False                |
+| bowling:middle|pace |         2.000 |          -0.062 |             0.710 | bat         |          17 | Cameron Green     | Australia     | overseas            | both          |                 78 |      56 |       22 |             0.444 |  0.255 |  0.644 |  0.125 |  0.718 |                          0.925 | True        |                           1.000 | False           | False                |
+| bowling:middle|pace |         2.000 |          -0.062 |             0.710 | bowl        |          17 | Kagiso Rabada     | South Africa  | overseas            | both          |                 45 |      39 |        6 |             0.409 |  0.026 |  0.862 | -0.085 |  1.074 |                          1.001 | True        |                           2.000 | False           | False                |
+| bowling:middle|pace |         2.000 |          -0.062 |             0.710 | bowl        |           7 | Jasprit Bumrah    | India         | Indian              | both          |                 66 |      59 |        7 |             0.140 | -0.224 |  0.479 | -0.407 |  0.647 |                          0.418 | False       |                         nan     | False           | False                |
+| bowling:middle|pace |         2.000 |          -0.062 |             0.710 | bowl        |          12 | Bhuvneshwar Kumar | India         | Indian              | both          |                 47 |      35 |       12 |            -0.048 | -0.202 |  0.104 | -0.277 |  0.195 |                         -0.225 | False       |                         nan     | False           | False                |
+| bowling:middle|pace |         2.000 |          -0.062 |             0.710 | bowl        |          16 | Trent Boult       | New Zealand   | overseas            | both          |                 84 |      78 |        6 |             0.209 | -0.028 |  0.473 | -0.145 |  0.609 |                          0.378 | False       |                         nan     | False           | True                 |
+| bowling:middle|pace |         2.000 |          -0.062 |             0.710 | bowl        |          20 | Mustafizur Rahman | Bangladesh    | overseas            | both          |                 65 |      10 |       55 |             0.187 | -0.244 |  0.592 | -0.429 |  0.807 |                          0.623 | False       |                         nan     | False           | False                |
+| bowling:middle|pace |         2.000 |          -0.062 |             0.710 | bowl        |           5 | Josh Hazlewood    | Australia     | overseas            | both          |                 64 |      35 |       29 |             0.208 | -0.211 |  0.578 | -0.526 |  0.764 |                          0.679 | False       |                         nan     | False           | False                |
+| bowling:middle|pace |         2.000 |          -0.062 |             0.710 | bowl        |          19 | Haris Rauf        | Pakistan      | overseas            | T20I-only     |                 58 |       0 |       58 |             0.106 | -0.362 |  0.635 | -0.478 |  0.925 |                          0.075 | False       |                         nan     | False           | False                |
+
+=== 3a. How many of the 40 listed players can speak to each target slot ===
+| target_slot         |   players_evaluated |   with_40plus_balls |   supported |   supported_indian |   supported_overseas |   supported_nationality_unknown |
+|:--------------------|--------------------:|--------------------:|------------:|-------------------:|---------------------:|--------------------------------:|
+| batting:7+          |                  40 |                   4 |           2 |                  0 |                    2 |                               0 |
+| bowling:death|pace  |                  30 |                   8 |           2 |                  1 |                    1 |                               0 |
+| bowling:middle|pace |                  30 |                   9 |           3 |                  1 |                    2 |                               0 |
+
+=== 3b. Overall pressure excess vs league par (slot-mix adjusted) in the listed role, with nationality, record and RR flags ===
+| list_role   |   list_rank | name                 | nationality          | nationality_class    | slot_record   |   n_ipl |   n_t20i |   n_pressure_balls |   excess_per_ball |    p10 |   p90 |   excess_winprob_per_100_balls |   pressure_rating |   floor_p10 | rr_2026_squad   | rr_any_ipl_2022_26   |
+|:------------|------------:|:---------------------|:---------------------|:---------------------|:--------------|--------:|---------:|-------------------:|------------------:|-------:|------:|-------------------------------:|------------------:|------------:|:----------------|:---------------------|
+| bat         |           1 | Heinrich Klaasen     | South Africa         | overseas             | both          |     160 |       40 |                200 |             0.379 |  0.234 | 0.490 |                          0.940 |             0.245 |       0.197 | False           | False                |
+| bat         |           2 | Suryakumar Yadav     | India                | Indian               | both          |     265 |      168 |                433 |             0.258 |  0.150 | 0.352 |                          0.544 |             0.248 |       0.194 | False           | False                |
+| bat         |           3 | Tim David            | Australia            | overseas             | both          |     147 |      123 |                270 |             0.149 | -0.010 | 0.324 |                          0.923 |             0.226 |       0.165 | False           | False                |
+| bat         |           4 | Abhishek Sharma      | India                | Indian               | both          |     288 |       97 |                385 |             0.137 | -0.012 | 0.262 |                          0.257 |             0.209 |       0.143 | False           | False                |
+| bat         |           5 | Phil Salt            | England              | overseas             | both          |      74 |      157 |                231 |             0.284 |  0.112 | 0.412 |                          0.609 |             0.194 |       0.129 | False           | False                |
+| bat         |           6 | Shreyas Iyer         | India                | Indian               | both          |     255 |       43 |                298 |             0.354 |  0.220 | 0.449 |                          0.977 |             0.188 |       0.126 | False           | False                |
+| bat         |           7 | Namboori Tilak Varma | India                | Indian               | both          |     251 |      246 |                497 |             0.138 |  0.036 | 0.237 |                          0.408 |             0.164 |       0.121 | False           | False                |
+| bat         |           8 | Sai Sudharsan        | India                | Indian               | IPL-only      |     312 |        0 |                312 |             0.048 | -0.053 | 0.124 |                         -0.003 |             0.142 |       0.102 | False           | False                |
+| bat         |           9 | Nicholas Pooran      | West Indies          | overseas             | both          |     204 |      164 |                368 |             0.178 |  0.010 | 0.335 |                          0.486 |             0.159 |       0.099 | False           | False                |
+| bat         |          10 | Shubman Gill         | India                | Indian               | both          |     387 |       83 |                470 |             0.084 | -0.005 | 0.171 |                          0.152 |             0.136 |       0.094 | False           | False                |
+| bat         |          11 | Jos Buttler          | England              | overseas             | both          |     225 |      131 |                356 |             0.092 | -0.046 | 0.196 |                          0.367 |             0.142 |       0.094 | False           | True                 |
+| bat         |          12 | Virat Kohli          | India                | Indian               | both          |     251 |       78 |                329 |             0.178 |  0.072 | 0.275 |                          0.318 |             0.127 |       0.087 | False           | False                |
+| bat         |          13 | Lokesh Rahul         | India                | Indian               | IPL-only      |     358 |        0 |                358 |             0.042 | -0.093 | 0.152 |                         -0.085 |             0.119 |       0.074 | False           | False                |
+| bat         |          14 | Mitchell Marsh       | Australia            | overseas             | both          |     151 |      202 |                353 |            -0.037 | -0.225 | 0.101 |                         -0.204 |             0.137 |       0.067 | False           | False                |
+| bat         |          15 | Ishan Kishan         | India                | Indian               | both          |     346 |       50 |                396 |             0.099 | -0.022 | 0.190 |                          0.217 |             0.116 |       0.065 | False           | False                |
+| bat         |          16 | Yashasvi Jaiswal     | India                | Indian               | both          |     281 |       31 |                312 |             0.139 | -0.033 | 0.251 |                          0.270 |             0.119 |       0.060 | True            | True                 |
+| bat         |          17 | Cameron Green        | Australia            | overseas             | both          |     100 |      111 |                211 |             0.153 | -0.058 | 0.350 |                          0.167 |             0.119 |       0.051 | False           | False                |
+| bat         |          18 | Riyan Parag          | India                | Indian               | IPL-only      |     203 |        0 |                203 |             0.116 | -0.053 | 0.292 |                          0.127 |             0.097 |       0.050 | True            | True                 |
+| bat         |          19 | Rovman Powell        | West Indies          | overseas             | both          |      97 |      154 |                251 |             0.203 |  0.023 | 0.342 |                          0.256 |             0.103 |       0.049 | False           | True                 |
+| bat         |          20 | Josh Inglis          | Australia            | overseas             | both          |      58 |      103 |                161 |             0.147 | -0.039 | 0.292 |                          0.225 |             0.134 |       0.046 | False           | False                |
+| bowl        |           1 | Sunil Narine         | not in supplied data | not in supplied data | IPL-only      |     300 |        0 |                300 |             0.152 |  0.015 | 0.284 |                          0.449 |             0.198 |       0.153 | False           | False                |
+| bowl        |           2 | Kuldeep Yadav        | India                | Indian               | both          |     233 |       66 |                299 |             0.137 |  0.050 | 0.215 |                          0.293 |             0.165 |       0.123 | False           | False                |
+| bowl        |           3 | Rashid Khan          | Afghanistan          | overseas             | both          |     235 |      204 |                439 |             0.123 |  0.028 | 0.227 |                          0.373 |             0.170 |       0.119 | False           | False                |
+| bowl        |           4 | Varun Chakravarthy   | India                | Indian               | both          |     249 |      124 |                373 |             0.041 | -0.085 | 0.132 |                          0.227 |             0.171 |       0.116 | False           | False                |
+| bowl        |           5 | Josh Hazlewood       | Australia            | overseas             | both          |     236 |      116 |                352 |             0.216 |  0.088 | 0.337 |                          0.787 |             0.169 |       0.106 | False           | False                |
+| bowl        |           6 | Wanindu Hasaranga    | Sri Lanka            | overseas             | both          |     208 |      156 |                364 |            -0.052 | -0.147 | 0.060 |                         -0.058 |             0.143 |       0.099 | False           | True                 |
+| bowl        |           7 | Jasprit Bumrah       | India                | Indian               | both          |     239 |       79 |                318 |             0.056 | -0.076 | 0.201 |                          0.188 |             0.149 |       0.095 | False           | False                |
+| bowl        |           8 | Axar Patel           | India                | Indian               | both          |     173 |      213 |                386 |             0.132 |  0.001 | 0.279 |                          0.355 |             0.123 |       0.082 | False           | False                |
+| bowl        |           9 | Noor Ahmad           | Afghanistan          | overseas             | both          |     139 |       68 |                207 |            -0.051 | -0.235 | 0.138 |                         -0.433 |             0.144 |       0.074 | False           | False                |
+| bowl        |          10 | Krunal Pandya        | not in supplied data | not in supplied data | IPL-only      |     247 |        0 |                247 |             0.237 |  0.069 | 0.394 |                          0.544 |             0.137 |       0.072 | False           | False                |
+| bowl        |          11 | Mujeeb Ur Rahman     | Afghanistan          | overseas             | T20I-only     |       0 |      201 |                201 |             0.029 | -0.136 | 0.187 |                          0.100 |             0.120 |       0.056 | False           | False                |
+| bowl        |          12 | Bhuvneshwar Kumar    | India                | Indian               | both          |     244 |      163 |                407 |             0.156 |  0.016 | 0.298 |                          0.449 |             0.110 |       0.054 | False           | False                |
+| bowl        |          13 | Mitchell Santner     | New Zealand          | overseas             | both          |      63 |      130 |                193 |             0.170 | -0.038 | 0.373 |                          0.347 |             0.106 |       0.046 | False           | False                |
+| bowl        |          14 | Ravindra Jadeja      | India                | Indian               | both          |     201 |        3 |                204 |             0.095 | -0.065 | 0.258 |                          0.154 |             0.107 |       0.043 | True            | True                 |
+| bowl        |          15 | Mohammad Nawaz       | Pakistan             | overseas             | T20I-only     |       0 |      180 |                180 |             0.160 | -0.054 | 0.351 |                          0.335 |             0.117 |       0.038 | False           | False                |
+| bowl        |          16 | Trent Boult          | New Zealand          | overseas             | both          |     248 |       36 |                284 |             0.140 |  0.008 | 0.302 |                          0.258 |             0.074 |       0.032 | False           | True                 |
+| bowl        |          17 | Kagiso Rabada        | South Africa         | overseas             | both          |     219 |       33 |                252 |             0.145 |  0.023 | 0.282 |                          0.281 |             0.079 |       0.030 | False           | False                |
+| bowl        |          18 | Arshdeep Singh       | India                | Indian               | both          |     417 |      278 |                695 |             0.142 |  0.060 | 0.231 |                          0.478 |             0.064 |       0.029 | False           | False                |
+| bowl        |          19 | Haris Rauf           | Pakistan             | overseas             | T20I-only     |       0 |      254 |                254 |             0.018 | -0.124 | 0.144 |                         -0.086 |             0.093 |       0.027 | False           | False                |
+| bowl        |          20 | Mustafizur Rahman    | Bangladesh           | overseas             | both          |      84 |      132 |                216 |            -0.063 | -0.231 | 0.103 |                         -0.255 |             0.073 |       0.027 | False           | False                |
+
+=== RR 2026 squad listing: nationality (derived from T20I squad listings) and gate status ===
+| name                 | nationality          | nationality_class    | clears_gates_bat_or_bowl   |
+|:---------------------|:---------------------|:---------------------|:---------------------------|
+| Ravindra Jadeja      | India                | Indian               | True                       |
+| Adam Milne           | New Zealand          | overseas             | False                      |
+| Sandeep Sharma       | not in supplied data | not in supplied data | False                      |
+| Dasun Shanaka        | Sri Lanka            | overseas             | False                      |
+| Shimron Hetmyer      | West Indies          | overseas             | True                       |
+| Jofra Archer         | England              | overseas             | True                       |
+| Sam Curran           | England              | overseas             | True                       |
+| Riyan Parag          | India                | Indian               | True                       |
+| Tushar Deshpande     | India                | Indian               | True                       |
+| Yashasvi Jaiswal     | India                | Indian               | True                       |
+| Dhruv Jurel          | India                | Indian               | True                       |
+| Sushant Mishra       | not in supplied data | not in supplied data | False                      |
+| Nandre Burger        | South Africa         | overseas             | False                      |
+| Ravi Bishnoi         | India                | Indian               | True                       |
+| Kuldeep Sen          | not in supplied data | not in supplied data | False                      |
+| Donovan Ferreira     | South Africa         | overseas             | False                      |
+| Yudhvir Singh        | India                | Indian               | False                      |
+| Shubham Dubey        | not in supplied data | not in supplied data | False                      |
+| Kwena Maphaka        | South Africa         | overseas             | False                      |
+| Yash Punja           | not in supplied data | not in supplied data | False                      |
+| Lhuan Pretorius      | South Africa         | overseas             | False                      |
+| Vignesh Puthur       | not in supplied data | not in supplied data | False                      |
+| Vaibhav Sooryavanshi | India                | Indian               | False                      |
+| Ravi Singh           | not in supplied data | not in supplied data | False                      |
+| Brijesh Sharma       | not in supplied data | not in supplied data | False                      |
+[   14s] main outputs written
+
+################ SENSITIVITY ################
+[   15s] top10%: done; target slots [('bowl', 'powerplay|pace'), ('bowl', 'death|pace'), ('bat', '7+')]
+[   23s] top15%: done; target slots [('bowl', 'death|pace'), ('bat', '7+'), ('bowl', 'powerplay|pace')]
+[   30s] top25%: done; target slots [('bowl', 'middle|pace'), ('bowl', 'death|pace'), ('bat', '7+')]
+[   38s] top30%: done; target slots [('bowl', 'middle|pace'), ('bat', '7+'), ('bowl', 'death|pace')]
+[   45s] within_innings: done; target slots [('bowl', 'powerplay|pace'), ('bowl', 'death|pace'), ('bat', '7+')]
+
+=== 4a. Gap rank by variant (NaN = slot is at or above par under that variant, so not a gap) ===
+| slot                   |   main |   top10% |   top15% |   top25% |   top30% |   within_innings |
+|:-----------------------|-------:|---------:|---------:|---------:|---------:|-----------------:|
+| bowling:death|pace     |      1 |        2 |        1 |        2 |        3 |                2 |
+| bowling:middle|pace    |      2 |        4 |        4 |        1 |        1 |                5 |
+| batting:7+             |      3 |        3 |        2 |        3 |        2 |                3 |
+| batting:3-4            |      4 |      nan |      nan |        4 |      nan |              nan |
+| bowling:powerplay|spin |      5 |        5 |        5 |        5 |      nan |                4 |
+| bowling:middle|spin    |    nan |      nan |      nan |      nan |      nan |              nan |
+| batting:5-6            |    nan |      nan |      nan |      nan |      nan |              nan |
+| bowling:death|spin     |    nan |      nan |      nan |      nan |      nan |              nan |
+| batting:1-2            |    nan |      nan |      nan |      nan |      nan |              nan |
+| bowling:powerplay|pace |    nan |        1 |        3 |      nan |      nan |                1 |
+
+=== 4a'. Gap distinguishable from par at 80% (interval excludes 0) ===
+| slot                   | main   | top10%   | top15%   | top25%   | top30%   | within_innings   |
+|:-----------------------|:-------|:---------|:---------|:---------|:---------|:-----------------|
+| bowling:death|pace     | False  | False    | False    | False    | False    | False            |
+| bowling:middle|pace    | False  | False    | False    | False    | True     | False            |
+| batting:7+             | True   | False    | True     | True     | True     | True             |
+| batting:3-4            | False  | False    | False    | False    | False    | False            |
+| bowling:powerplay|spin | False  | False    | False    | False    | False    | False            |
+| bowling:middle|spin    | False  | False    | False    | False    | False    | False            |
+| batting:5-6            | False  | False    | False    | False    | False    | False            |
+| bowling:death|spin     | False  | False    | False    | False    | False    | False            |
+| batting:1-2            | False  | False    | False    | False    | False    | False            |
+| bowling:powerplay|pace | False  | True     | False    | False    | False    | True             |
+
+=== 4a''. P(gap < 0) in the bootstrap by variant ===
+| slot                   |   main |   top10% |   top15% |   top25% |   top30% |   within_innings |
+|:-----------------------|-------:|---------:|---------:|---------:|---------:|-----------------:|
+| bowling:death|pace     |   0.87 |     0.89 |     0.87 |     0.82 |     0.66 |             0.80 |
+| bowling:middle|pace    |   0.71 |     0.70 |     0.65 |     0.83 |     0.92 |             0.52 |
+| batting:7+             |   0.92 |     0.85 |     0.90 |     0.91 |     0.98 |             0.92 |
+| batting:3-4            |   0.69 |     0.37 |     0.33 |     0.58 |     0.47 |             0.23 |
+| bowling:powerplay|spin |   0.76 |     0.50 |     0.77 |     0.63 |     0.43 |             0.64 |
+| bowling:middle|spin    |   0.32 |     0.40 |     0.39 |     0.39 |     0.32 |             0.34 |
+| batting:5-6            |   0.24 |     0.14 |     0.13 |     0.46 |     0.43 |             0.14 |
+| bowling:death|spin     |   0.06 |     0.05 |     0.07 |     0.07 |     0.08 |             0.27 |
+| batting:1-2            |   0.30 |     0.19 |     0.03 |     0.09 |     0.05 |             0.04 |
+| bowling:powerplay|pace |   0.18 |     0.99 |     0.79 |     0.05 |     0.04 |             0.98 |
+
+=== 4b. Gap-ranking survival. Main top 3: ['bowling:death|pace', 'bowling:middle|pace', 'batting:7+']; main distinguishable-at-80%: ['batting:7+'] ===
+| variant        | in_brief   |   kendall_tau_priority_all10 | below_par_set_overlap   |   top3_set_overlap | top3_same_order   | rank1_same   | main_below_slots_keeping_exact_rank   | variant_top3                                           | distinguishable80_slots            | distinguishable95_slots   |
+|:---------------|:-----------|-----------------------------:|:------------------------|-------------------:|:------------------|:-------------|:--------------------------------------|:-------------------------------------------------------|:-----------------------------------|:--------------------------|
+| top10%         | False      |                        0.378 | 4 of 5 (variant has 5)  |                  2 | False             | False        | 2 of 5                                | bowling:powerplay|pace; bowling:death|pace; batting:7+ | bowling:powerplay|pace             | bowling:powerplay|pace    |
+| top15%         | True       |                        0.511 | 4 of 5 (variant has 5)  |                  2 | False             | True         | 2 of 5                                | bowling:death|pace; batting:7+; bowling:powerplay|pace | batting:7+                         | none                      |
+| top25%         | True       |                        0.867 | 5 of 5 (variant has 5)  |                  3 | False             | False        | 3 of 5                                | bowling:middle|pace; bowling:death|pace; batting:7+    | batting:7+                         | none                      |
+| top30%         | True       |                        0.822 | 3 of 5 (variant has 3)  |                  3 | False             | False        | 0 of 5                                | bowling:middle|pace; batting:7+; bowling:death|pace    | bowling:middle|pace; batting:7+    | batting:7+                |
+| within_innings | True       |                        0.333 | 4 of 5 (variant has 5)  |                  2 | False             | False        | 1 of 5                                | bowling:powerplay|pace; bowling:death|pace; batting:7+ | batting:7+; bowling:powerplay|pace | bowling:powerplay|pace    |
+
+=== 4c. Main 'supported' names at main's top-3 gap slots: survival by variant ===
+| slot             | name           | nationality_class   |   main_n |   main_excess |   main_p10 | top10%: supported   | top15%: supported   | top25%: supported   | top30%: supported   | within_innings: supported   |   supported_in_variants_of_5 |   supported_in_brief_variants_of_4 |
+|:-----------------|:---------------|:--------------------|---------:|--------------:|-----------:|:--------------------|:--------------------|:--------------------|:--------------------|:----------------------------|-----------------------------:|-----------------------------------:|
+| bowl:middle|pace | Cameron Green  | overseas            |       78 |         0.444 |      0.255 | False               | True                | True                | True                | False                       |                            3 |                                  3 |
+| bat:7+           | Rashid Khan    | overseas            |       97 |         0.311 |      0.174 | True                | True                | True                | True                | False                       |                            4 |                                  3 |
+| bowl:death|pace  | Josh Hazlewood | overseas            |       93 |         0.360 |      0.158 | True                | True                | True                | True                | True                        |                            5 |                                  4 |
+| bat:7+           | Mohammad Nawaz | overseas            |       44 |         0.312 |      0.046 | False               | False               | True                | True                | True                        |                            3 |                                  3 |
+| bowl:middle|pace | Kagiso Rabada  | overseas            |       45 |         0.409 |      0.026 | False               | False               | True                | True                | False                       |                            2 |                                  2 |
+| bowl:middle|pace | Arshdeep Singh | Indian              |      150 |         0.204 |      0.051 | False               | False               | True                | True                | False                       |                            2 |                                  2 |
+| bowl:death|pace  | Arshdeep Singh | Indian              |      274 |         0.132 |      0.015 | True                | True                | False               | True                | True                        |                            4 |                                  3 |
+
+=== 4d. Names supported at a main target slot in a variant but NOT in main ===
+| variant        | slot            | name           | nationality_class   |   n |   excess |   p10 |
+|:---------------|:----------------|:---------------|:--------------------|----:|---------:|------:|
+| top30%         | bowl:death|pace | Jasprit Bumrah | Indian              | 119 |    0.132 | 0.011 |
+| within_innings | bowl:death|pace | Jasprit Bumrah | Indian              | 155 |    0.165 | 0.049 |
+
+=== 4e. Survival summary ===
+| item                                                                                 | value                                               |
+|:-------------------------------------------------------------------------------------|:----------------------------------------------------|
+| main top-3 gap slots                                                                 | bowling:death|pace; bowling:middle|pace; batting:7+ |
+| main supported (slot, name) pairs at those slots                                     | 7                                                   |
+| pairs still supported in ALL 5 grid variants                                         | 1                                                   |
+| pairs still supported in ALL 4 variants named in the brief                           | 1                                                   |
+| pairs supported in at least 3 of 5                                                   | 5                                                   |
+| pairs supported in none of the variants                                              | 0                                                   |
+| variants whose top-3 gap set equals main's (of 5)                                    | 2                                                   |
+| variants whose top-3 gap ORDER equals main's (of 5)                                  | 0                                                   |
+| variants whose #1 gap equals main's (of 5)                                           | 1                                                   |
+| variants in which main's one 80%-distinguishable gap is still distinguishable (of 5) | 4                                                   |
+[   45s] sensitivity outputs written

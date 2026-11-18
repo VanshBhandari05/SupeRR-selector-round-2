@@ -1,0 +1,101 @@
+target_slot,rr_gap_rank,rr_gap_vs_par,rr_gap_p_below0,rr_gap_distinguishable_80,list_role,list_rank,name,nationality,nationality_class,slot_record,n_pressure_balls,n_ipl,n_t20i,excess_per_ball,p10,p90,p025,p975,excess_winprob_per_100_balls,supported,rank_in_class_among_supported,rr_2026_squad,rr_any_ipl_2022_26,clears_gates_in_slot_role,note
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bowl,3,Rashid Khan,Afghanistan,overseas,both,97,80,17,0.31094052369515923,0.17442639430723017,0.42747358725224865,0.03984940447455995,0.47832142925190724,1.8477452018356166,True,1.0,False,False,False,
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bowl,15,Mohammad Nawaz,Pakistan,overseas,T20I-only,44,0,44,0.31244732426704347,0.046113811237435264,0.4615457270618828,-0.5352941341758586,0.5311231101520142,1.3536046789505358,True,2.0,False,False,False,
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bowl,8,Axar Patel,India,Indian,both,122,77,45,0.026119546387678928,-0.18279337580157126,0.17932592865921437,-0.29067613129473646,0.2841728973691343,-0.08982459890233913,False,,False,False,True,
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bowl,14,Ravindra Jadeja,India,Indian,both,38,34,4,,,,,,,False,,True,True,True,suppressed: 38 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bowl,2,Kuldeep Yadav,India,Indian,both,36,27,9,,,,,,,False,,False,False,False,suppressed: 36 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bowl,18,Arshdeep Singh,India,Indian,both,18,2,16,,,,,,,False,,False,False,False,suppressed: 18 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bat,18,Riyan Parag,India,Indian,IPL-only,14,14,0,,,,,,,False,,True,True,True,suppressed: 14 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bowl,12,Bhuvneshwar Kumar,India,Indian,IPL-only,13,13,0,,,,,,,False,,False,False,False,suppressed: 13 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bowl,7,Jasprit Bumrah,India,Indian,IPL-only,7,7,0,,,,,,,False,,False,False,False,suppressed: 7 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bat,13,Lokesh Rahul,India,Indian,IPL-only,3,3,0,,,,,,,False,,False,False,True,suppressed: 3 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bowl,4,Varun Chakravarthy,India,Indian,IPL-only,1,1,0,,,,,,,False,,False,False,False,suppressed: 1 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bat,2,Suryakumar Yadav,India,Indian,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bat,4,Abhishek Sharma,India,Indian,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bat,6,Shreyas Iyer,India,Indian,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bat,7,Namboori Tilak Varma,India,Indian,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bat,8,Sai Sudharsan,India,Indian,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bat,10,Shubman Gill,India,Indian,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bat,12,Virat Kohli,India,Indian,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bat,15,Ishan Kishan,India,Indian,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bat,16,Yashasvi Jaiswal,India,Indian,none,0,0,0,,,,,,,False,,True,True,True,suppressed: 0 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bowl,10,Krunal Pandya,not in supplied data,not in supplied data,IPL-only,10,10,0,,,,,,,False,,False,False,False,suppressed: 10 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bowl,1,Sunil Narine,not in supplied data,not in supplied data,IPL-only,9,9,0,,,,,,,False,,False,False,False,suppressed: 9 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bowl,6,Wanindu Hasaranga,Sri Lanka,overseas,both,61,22,39,0.014559907403348385,-0.3008093905732285,0.3106243185250844,-0.5515137775033541,0.4753576372849965,-0.540343196966631,False,,False,True,False,
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bowl,17,Kagiso Rabada,South Africa,overseas,both,29,27,2,,,,,,,False,,False,False,False,suppressed: 29 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bowl,13,Mitchell Santner,New Zealand,overseas,both,26,5,21,,,,,,,False,,False,False,False,suppressed: 26 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bat,3,Tim David,Australia,overseas,IPL-only,18,18,0,,,,,,,False,,False,False,True,suppressed: 18 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bowl,9,Noor Ahmad,Afghanistan,overseas,both,15,4,11,,,,,,,False,,False,False,False,suppressed: 15 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bowl,19,Haris Rauf,Pakistan,overseas,T20I-only,15,0,15,,,,,,,False,,False,False,False,suppressed: 15 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bat,19,Rovman Powell,West Indies,overseas,IPL-only,14,14,0,,,,,,,False,,False,True,True,suppressed: 14 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bowl,20,Mustafizur Rahman,Bangladesh,overseas,both,11,4,7,,,,,,,False,,False,False,False,suppressed: 11 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bat,5,Phil Salt,England,overseas,T20I-only,6,0,6,,,,,,,False,,False,False,True,suppressed: 6 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bat,17,Cameron Green,Australia,overseas,IPL-only,6,6,0,,,,,,,False,,False,False,True,suppressed: 6 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bowl,11,Mujeeb Ur Rahman,Afghanistan,overseas,T20I-only,5,0,5,,,,,,,False,,False,False,False,suppressed: 5 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bowl,16,Trent Boult,New Zealand,overseas,IPL-only,5,5,0,,,,,,,False,,False,True,False,suppressed: 5 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bowl,5,Josh Hazlewood,Australia,overseas,T20I-only,3,0,3,,,,,,,False,,False,False,False,suppressed: 3 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bat,1,Heinrich Klaasen,South Africa,overseas,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bat,9,Nicholas Pooran,West Indies,overseas,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bat,11,Jos Buttler,England,overseas,none,0,0,0,,,,,,,False,,False,True,True,suppressed: 0 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bat,14,Mitchell Marsh,Australia,overseas,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+batting:7+,3.0,-0.14085945551332066,0.9166666666666666,True,bat,20,Josh Inglis,Australia,overseas,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bowl,18,Arshdeep Singh,India,Indian,both,274,173,101,0.1321637198211674,0.015465138181346264,0.2416546056748955,-0.03871818470672377,0.2785979825063901,0.7788399011227256,True,1.0,False,False,True,
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bowl,5,Josh Hazlewood,Australia,overseas,both,93,77,16,0.3597744090266725,0.1577266385426264,0.5579178184649481,0.06330437019016688,0.654058886603364,1.8305045022679876,True,1.0,False,False,True,
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bowl,12,Bhuvneshwar Kumar,India,Indian,both,166,95,71,0.0020300712463503915,-0.1328874783567776,0.1204218442963939,-0.2224075697105042,0.1836319254653313,0.4648188081436269,False,,False,False,True,
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bowl,7,Jasprit Bumrah,India,Indian,both,77,72,5,0.0052297330949466585,-0.157554407899487,0.2129565338183754,-0.2429674388615579,0.32775780319981607,0.26411498933265565,False,,False,False,True,
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bat,2,Suryakumar Yadav,India,Indian,none,0,0,0,,,,,,,False,,False,False,False,suppressed: 0 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bat,4,Abhishek Sharma,India,Indian,none,0,0,0,,,,,,,False,,False,False,False,suppressed: 0 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bat,6,Shreyas Iyer,India,Indian,none,0,0,0,,,,,,,False,,False,False,False,suppressed: 0 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bat,7,Namboori Tilak Varma,India,Indian,none,0,0,0,,,,,,,False,,False,False,False,suppressed: 0 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bat,16,Yashasvi Jaiswal,India,Indian,none,0,0,0,,,,,,,False,,True,True,False,suppressed: 0 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bat,18,Riyan Parag,India,Indian,none,0,0,0,,,,,,,False,,True,True,False,suppressed: 0 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bowl,2,Kuldeep Yadav,India,Indian,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bowl,4,Varun Chakravarthy,India,Indian,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bowl,8,Axar Patel,India,Indian,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bowl,14,Ravindra Jadeja,India,Indian,none,0,0,0,,,,,,,False,,True,True,True,suppressed: 0 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bowl,1,Sunil Narine,not in supplied data,not in supplied data,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bowl,10,Krunal Pandya,not in supplied data,not in supplied data,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bowl,19,Haris Rauf,Pakistan,overseas,T20I-only,92,0,92,-0.04891405873872926,-0.22619492990289095,0.12398832597901506,-0.3017908997638122,0.21558267922620314,-0.4059735716633733,False,,False,False,True,
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bowl,16,Trent Boult,New Zealand,overseas,both,79,70,9,-0.03513295147568158,-0.24867940390143398,0.21013824416561797,-0.370197610385582,0.3558334498752888,-0.04337983373343193,False,,False,True,True,
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bowl,20,Mustafizur Rahman,Bangladesh,overseas,both,79,32,47,-0.17159704279149107,-0.32527633461238487,0.043471275889186624,-0.47036547829111625,0.1374984817893469,-0.9028080507719293,False,,False,False,True,
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bowl,17,Kagiso Rabada,South Africa,overseas,both,77,70,7,-0.24879285843913715,-0.4450842068288095,-0.06492937804459673,-0.5306307258936965,0.02813418380990148,-0.6232143464972127,False,,False,False,True,
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bat,17,Cameron Green,Australia,overseas,both,35,28,7,,,,,,,False,,False,False,False,suppressed: 35 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bat,14,Mitchell Marsh,Australia,overseas,IPL-only,5,5,0,,,,,,,False,,False,False,False,suppressed: 5 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bat,3,Tim David,Australia,overseas,none,0,0,0,,,,,,,False,,False,False,False,suppressed: 0 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bat,19,Rovman Powell,West Indies,overseas,none,0,0,0,,,,,,,False,,False,True,False,suppressed: 0 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bowl,3,Rashid Khan,Afghanistan,overseas,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bowl,6,Wanindu Hasaranga,Sri Lanka,overseas,none,0,0,0,,,,,,,False,,False,True,True,suppressed: 0 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bowl,9,Noor Ahmad,Afghanistan,overseas,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bowl,11,Mujeeb Ur Rahman,Afghanistan,overseas,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bowl,13,Mitchell Santner,New Zealand,overseas,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+bowling:death|pace,1.0,-0.07982475837949647,0.87,False,bowl,15,Mohammad Nawaz,Pakistan,overseas,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bowl,18,Arshdeep Singh,India,Indian,both,150,105,45,0.20376848786236276,0.05126513591076462,0.3778935910517793,-0.04374744149075732,0.5198197208369381,0.4218784442999226,True,1.0,False,False,True,
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bat,17,Cameron Green,Australia,overseas,both,78,56,22,0.4435502581643592,0.25527881809732733,0.6437654736314534,0.12495130443262432,0.7177526927796866,0.9246143353576426,True,1.0,False,False,False,
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bowl,17,Kagiso Rabada,South Africa,overseas,both,45,39,6,0.4088793968666688,0.02615105343313961,0.8620061312677604,-0.08477500697649097,1.0741931108488199,1.0012922833030466,True,2.0,False,False,True,
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bowl,7,Jasprit Bumrah,India,Indian,both,66,59,7,0.14027904673210237,-0.2235146233851777,0.47897591946328544,-0.40692357196797013,0.646546423180043,0.41751417012168673,False,,False,False,True,
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bowl,12,Bhuvneshwar Kumar,India,Indian,both,47,35,12,-0.047579858381020586,-0.20186781472203655,0.10419353088938,-0.27687442847973137,0.19504044117583244,-0.2251657437462119,False,,False,False,True,
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bat,2,Suryakumar Yadav,India,Indian,none,0,0,0,,,,,,,False,,False,False,False,suppressed: 0 pressure balls < 40
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bat,4,Abhishek Sharma,India,Indian,none,0,0,0,,,,,,,False,,False,False,False,suppressed: 0 pressure balls < 40
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bat,6,Shreyas Iyer,India,Indian,none,0,0,0,,,,,,,False,,False,False,False,suppressed: 0 pressure balls < 40
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bat,7,Namboori Tilak Varma,India,Indian,none,0,0,0,,,,,,,False,,False,False,False,suppressed: 0 pressure balls < 40
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bat,16,Yashasvi Jaiswal,India,Indian,none,0,0,0,,,,,,,False,,True,True,False,suppressed: 0 pressure balls < 40
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bat,18,Riyan Parag,India,Indian,none,0,0,0,,,,,,,False,,True,True,False,suppressed: 0 pressure balls < 40
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bowl,2,Kuldeep Yadav,India,Indian,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bowl,4,Varun Chakravarthy,India,Indian,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bowl,8,Axar Patel,India,Indian,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bowl,14,Ravindra Jadeja,India,Indian,none,0,0,0,,,,,,,False,,True,True,True,suppressed: 0 pressure balls < 40
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bowl,1,Sunil Narine,not in supplied data,not in supplied data,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bowl,10,Krunal Pandya,not in supplied data,not in supplied data,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bowl,16,Trent Boult,New Zealand,overseas,both,84,78,6,0.20932726693765472,-0.028434101759241555,0.4729215295034817,-0.14491072721419546,0.609421750726652,0.37779322353370043,False,,False,True,True,
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bowl,20,Mustafizur Rahman,Bangladesh,overseas,both,65,10,55,0.1869047118930085,-0.24430680199177537,0.5915947956080775,-0.4294476476786484,0.8072596846383012,0.6231259189011354,False,,False,False,True,
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bowl,5,Josh Hazlewood,Australia,overseas,both,64,35,29,0.20813759953843303,-0.21057616184792421,0.5782139587257319,-0.5258645963636264,0.763896961173992,0.6788458678105624,False,,False,False,True,
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bowl,19,Haris Rauf,Pakistan,overseas,T20I-only,58,0,58,0.10558704499230817,-0.36150590585463716,0.6351441952152318,-0.47828746960204777,0.9246800738524058,0.07452049298996616,False,,False,False,True,
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bat,14,Mitchell Marsh,Australia,overseas,IPL-only,18,18,0,,,,,,,False,,False,False,False,suppressed: 18 pressure balls < 40
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bat,19,Rovman Powell,West Indies,overseas,T20I-only,15,0,15,,,,,,,False,,False,True,False,suppressed: 15 pressure balls < 40
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bat,3,Tim David,Australia,overseas,none,0,0,0,,,,,,,False,,False,False,False,suppressed: 0 pressure balls < 40
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bowl,3,Rashid Khan,Afghanistan,overseas,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bowl,6,Wanindu Hasaranga,Sri Lanka,overseas,none,0,0,0,,,,,,,False,,False,True,True,suppressed: 0 pressure balls < 40
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bowl,9,Noor Ahmad,Afghanistan,overseas,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bowl,11,Mujeeb Ur Rahman,Afghanistan,overseas,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bowl,13,Mitchell Santner,New Zealand,overseas,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40
+bowling:middle|pace,2.0,-0.061707191791122905,0.71,False,bowl,15,Mohammad Nawaz,Pakistan,overseas,none,0,0,0,,,,,,,False,,False,False,True,suppressed: 0 pressure balls < 40

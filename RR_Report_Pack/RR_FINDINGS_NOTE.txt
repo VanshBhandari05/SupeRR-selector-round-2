@@ -1,0 +1,56 @@
+RAJASTHAN ROYALS: PRESSURE GAPS AND CANDIDATE MAPPING (Stage 9, additive to Round 1)
+Written for: you (Vansh), as the analyst's own input before writing the Round 1 "squad fit" section.
+Scope: IPL 2022-26, 75 RR matches in the rating sample (77 played; 2 excluded by Stage 1: one abandoned, one rain).
+RR pressure deliveries: 3,712 (1,688 batting, 2,024 bowling) of 15,714 in the league sample. Pressure flag, ratings, gates and ranks are unchanged.
+Units: value per ball = opposition-adjusted v (dWP0 / swing), the rating's own unit. "Gap" = RR minus rest-of-IPL in the same slot, pressure balls only.
+Intervals: 80% = p10 to p90 (your floor convention); 95% = p2.5 to p97.5. Whole-match bootstrap, the same 300 resamples as Stage 5.
+
+HEADLINE
+RR is at par under pressure overall: batting +0.021/ball (80%: -0.049 to +0.077), bowling +0.025/ball (-0.035 to +0.086).
+No gap is distinguishable from par at 95%. One of ten slots separates at 80%, which is about what chance alone gives (10 slots x 10%).
+So the ranking below is directional. Only the batting 7+ gap has any statistical support, and it is a weak one.
+
+TOP THREE GAPS (ranked by gap x RR pressure balls per innings; a slot RR barely uses ranks low)
+1. Death-overs pace bowling. Gap -0.080/ball (80%: -0.171 to +0.009; 95%: -0.213 to +0.074), n=398 pressure balls (5.3 per innings).
+   Shortfall about -0.42 value units per innings (about -2.2 win-probability points per match; 80%: -5.4 to +0.7). P(gap<0)=0.87.
+   NOT distinguishable from par. RR's death pace is worse under pressure than on its own ordinary death balls (shift -0.115; 80% excludes 0, 95% does not).
+2. Middle-overs pace bowling. Gap -0.062 (80%: -0.160 to +0.076), n=362 (4.8 per innings). P(gap<0)=0.71. NOT distinguishable from par.
+3. Batting at 7 or lower. Gap -0.141 (80%: -0.284 to -0.010; 95%: -0.372 to +0.046), n=141 (1.9 per innings). P(gap<0)=0.92.
+   Excludes zero at 80% only. It is also -0.165 on ordinary balls (95% excludes 0), and the pressure shift is +0.024 (not distinguishable):
+   this is a lower-order weakness in general, not a pressure effect. Low usage: under 2 pressure balls per innings.
+Next in line, not top three: batting 3-4 (-0.028, n.s.), powerplay spin (-0.098, n=96, n.s.). Everything else is at or above par.
+Win-probability weighting puts batting 7+ first (-3.2 points per match; 80%: -5.0 to -1.3), then death pace (-2.2). Both weightings agree on those two;
+third place is a tie in win-probability units (batting 3-4 -0.71 vs middle pace -0.69 points per match, both n.s.), so slot 3 is not settled.
+
+ALREADY COVERED? (2026 RR squad listing as the only "on the books" proxy; gate = your eligibility flags in that role)
+Death pace: on paper yes. Sam Curran clears the gates and has n=105, excess +0.189 (80%: +0.048 to +0.304). His record is career-wide, not RR-only, so RR's gap persists anyway.
+Middle pace: open. Curran (n=77, -0.127) and Deshpande (n=57, -0.245) are the gate-clearers with a sample; neither is above par.
+Batting 7+: open. No gate-clearing squad player has 40 pressure balls at 7+.
+
+CANDIDATES FROM YOUR TOP 20s (slot excess vs league par per ball, with n, 80% interval; cells under 40 balls are suppressed)
+Batting 7+ (36 of 40 listed players have under 40 pressure balls there; no top-20 batter has 40):
+  Rashid Khan (overseas, bowler #3): n=97 (IPL 80, T20I 17), +0.311 (+0.174 to +0.427; 95% +0.040 to +0.478).
+  Mohammad Nawaz (overseas, T20I-only, bowler #15): n=44, +0.312 (+0.046 to +0.462; 95% -0.535 to +0.531, weak).
+  No Indian candidate is supported (Axar Patel: n=122, +0.026, 80% -0.183 to +0.179).
+Death pace:
+  Josh Hazlewood (overseas, #5): n=93 (IPL 77, T20I 16), +0.360 (+0.158 to +0.558; 95% +0.063 to +0.654).
+  Arshdeep Singh (Indian, #18): n=274 (IPL 173, T20I 101), +0.132 (+0.015 to +0.242; 95% -0.039 to +0.279).
+  Not supported with 40+ balls: Bumrah n=77 (+0.005), Bhuvneshwar n=166 (+0.002), Boult n=79 (-0.035), Rauf n=92 (-0.049, T20I-only), Mustafizur n=79 (-0.172), Rabada n=77 (-0.249; 80% -0.445 to -0.065, below par).
+Middle pace: Cameron Green (overseas, batter #17, bowls) n=78, +0.444 (+0.255 to +0.644); Arshdeep n=150, +0.204 (+0.051 to +0.378); Rabada n=45, +0.409 (+0.026 to +0.862, thin).
+Overseas candidates compete only with each other: Hazlewood is the one overseas death-pace name; Rashid vs Nawaz at 7+; Green vs Rabada in the middle overs.
+The RR 2026 listing already holds 9 overseas players by derived nationality (Milne, Shanaka, Hetmyer, Archer, Curran, Burger, Ferreira, Maphaka, Pretorius) against a limit of four in the XI;
+8 more have no derivable nationality. 2027 composition is not in the supplied data.
+RR flags: Jaiswal, Parag, Jadeja are in the 2026 RR squad listing and in your top 20s. Buttler, Powell, Hasaranga, Boult were in RR IPL squads 2022-26 but not the 2026 listing.
+
+SENSITIVITY (top 10/15/25/30% and within-innings thresholds, full ridge refit and 300 resamples each)
+Gap ranking: the exact top-3 order survives in 0 of 5 variants; the top-3 set in 2 of 5; the #1 slot in 1 of 5.
+  Death pace and batting 7+ are in the top 3 in 5 of 5. The third slot flips: middle pace (main, 25%, 30%) versus powerplay pace (10%, 15%, within-innings).
+  Batting 7+ stays distinguishable at 80% in 4 of 5 (not at 10%); death pace is never distinguishable (P(gap<0) 0.66 to 0.89).
+Names (7 slot-name pairs at main's top-3 slots): 1 survives in all 5 (Hazlewood, death pace), 5 of 7 survive in at least 3 of 5, none vanish entirely.
+  Hazlewood death 5/5; Rashid 7+ 4/5; Arshdeep death 4/5; Nawaz 7+ 3/5; Green middle 3/5; Arshdeep middle 2/5; Rabada middle 2/5. Bumrah enters at death pace in 2 variants.
+Write-up advice: state the death-pace and lower-order batting needs as directional; Hazlewood (death pace) and Rashid (lower order) are the most defensible names.
+
+CAUTIONS
+Candidates were picked as top 20 on the same data, so slot excess is biased upward and is not shrunk the way the ratings are. Read it as direction plus interval, not as expected output.
+Gaps are not venue-adjusted beyond the leverage model's own scoring-environment tier (RR home venues are unadjusted).
+Not in supplied data: IPL 2027 purse, retentions, contracts and values, squad lists after 2026, availability. See RR_ABSTENTIONS.txt for every abstention.

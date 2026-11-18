@@ -1,0 +1,42 @@
+EVERY PLACE THE RR STAGE ABSTAINED (and why)
+
+A. Facts that need data outside the supplied files: "not in supplied data"
+ 1. IPL 2027 purse / remaining budget: not in supplied data.
+ 2. IPL 2027 retention rules and which RR players are retained or released: not in supplied data.
+ 3. Squad lists after the IPL 2026 listing in competition_team_player_mapping.csv: not in supplied data.
+ 4. Contract values, contract length, buy-out or trade status of any player: not in supplied data.
+ 5. Player availability (injury, national duty, auction pool entry): not in supplied data.
+ 6. Whether a 2026-listed RR player is "contracted" for 2027: not in supplied data. The 2026 RR squad listing (27 players) is used only as a proxy for "on RR's books in the data".
+ 7. How many overseas players RR will hold in 2027: not in supplied data. Only the derived-nationality count of the 2026 listing is reported (9 overseas identified, 8 unknown).
+ 8. Auction price or market value of any candidate: not in supplied data.
+
+B. Nationality (Indian / overseas) is not a field in the data
+ 9. Nationality is derived from T20I squad listings (a player listed only for India = Indian; any other single national team = overseas); an A-team-only listing is used as a fallback.
+10. Players with no T20I or A-team listing get "not in supplied data": Sunil Narine (bowler #1) and Krunal Pandya (bowler #10) among the 40 candidates; 8 of the 27 RR 2026-squad players
+    (Sandeep Sharma, Sushant Mishra, Kuldeep Sen, Shubham Dubey, Yash Punja, Vignesh Puthur, Ravi Singh, Brijesh Sharma). They are not guessed.
+11. Nationality is not checked for eligibility under the overseas rule (e.g. associate-nation or other-status players): not in supplied data.
+
+C. Cells suppressed for sample size (under 40 pressure balls in the slot)
+12. Batting 7+: 36 of the 40 listed players are suppressed (14 have zero balls there). All 20 top batters are suppressed, so no listed batter can be offered for this slot.
+13. Death pace: of 30 listed players with any bowling rows, 22 are suppressed (20 have zero pace-death balls: spinners or no bowling).
+14. Middle pace: 21 of 30 suppressed (19 with zero).
+15. 10 of the 40 listed players have no bowling rows in the rating sample at all, so they are absent from the two bowling slots.
+16. Squad evidence: any RR 2026-squad player under 40 slot balls is listed as "suppressed" in rr_02b_rr_squad_slot_evidence.csv, and cannot count as covering a gap.
+17. Candidate rows for the other seven (non-target) slots are in rr_03_candidate_slot_evidence.csv with the same suppression rule (247 of 340 slot cells suppressed overall).
+
+D. Gaps reported as not distinguishable from par (not ranked as findings)
+18. Death pace, middle pace, batting 3-4, powerplay spin, and all five slots at or above par: not distinguishable from par at 80% or 95%.
+19. Batting 7+ is distinguishable at 80% only, not at 95%; reported as weak support, one of ten slots.
+20. In sensitivity, death-pace gap is never distinguishable in any variant; middle pace only under the top 30% variant; powerplay pace only under top 10% and within-innings.
+21. RR's overall batting and overall bowling pressure gaps are not distinguishable from par.
+
+E. Things the data cannot separate
+22. Venue effects: RR gaps are not adjusted for RR's home grounds beyond the leverage model's scoring-environment tier. Not controlled in this stage by design (no retuning).
+23. Selection bias: the candidates are the top 20 on the same data; their slot excess is unshrunk and biased upward. Not corrected (no new model was fitted for it).
+24. Bowler type: pace/spin comes from the supplied pace_or_spin field at ball level; no bowler style detail (e.g. wrist vs finger spin) was used.
+25. Slot-level coverage uses a player's career record across IPL and T20I, not RR-only; RR-only slot records were not separable at usable sample sizes.
+26. Pressure flag variants: only those in the existing grid (10/15/20/25/30% pooled, within-innings 20%). The win-probability-without-recalibration variant was never run in Stage 6 and is not run here either.
+
+F. Method choices flagged for review (not abstentions)
+27. A draft check in stage9d ("mean adjusted value near 0") was wrong (adjusted value is not centred by construction). It was replaced by the correct check (dWP0 centred within each Stage-4 bin); the replacement and the reason are recorded in src/stage9d_crosscheck.py.
+28. Top-10% threshold is in the existing grid, so it is run and shown, but the "survives in k of 4" counts that match your brief use 15%, 25%, 30% and within-innings only; the 5-variant counts include top 10%.

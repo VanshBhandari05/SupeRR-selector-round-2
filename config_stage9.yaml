@@ -1,0 +1,17 @@
+# Stage 9 (additive): Rajasthan Royals pressure profile, gaps, candidate mapping, sensitivity.
+# Separate from config.yaml on purpose: config.yaml is hashed in FINAL_LOCK.md and must not change.
+# Nothing here redefines pressure, retunes the rating, changes eligibility gates or re-ranks anyone.
+rr:
+  team_name: "Rajasthan Royals"      # team id is looked up from teams.csv by this name, never hard-coded
+  squad_comp_id: 3298                # IPL 2026 = latest squad listing in the supplied mapping table
+batting_bands:                       # batting position (pipeline's clipped batting_position)
+  "1-2": [1, 2]
+  "3-4": [3, 4]
+  "5-6": [5, 6]
+  "7+":  [7, 11]
+min_slot_pressure_balls: 40          # suppress any candidate / squad cell below this
+intervals: {central_a: [0.10, 0.90], central_b: [0.025, 0.975]}   # 80% = pipeline convention (p10 floor, p10/p90 shift test); 95% shown beside it
+top_n_candidates: 20
+n_gap_slots_for_mapping: 3
+supported_rule: "n >= min_slot_pressure_balls AND 10th percentile of slot excess > 0"   # same floor convention as the rating
+sensitivity_cutoffs: [0.10, 0.15, 0.25, 0.30]    # from config.yaml sensitivity.cutoffs; main = 0.20

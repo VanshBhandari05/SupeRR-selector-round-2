@@ -1,0 +1,11 @@
+item,value
+main top-3 gap slots,bowling:death|pace; bowling:middle|pace; batting:7+
+"main supported (slot, name) pairs at those slots",7
+pairs still supported in ALL 5 grid variants,1
+pairs still supported in ALL 4 variants named in the brief,1
+pairs supported in at least 3 of 5,5
+pairs supported in none of the variants,0
+variants whose top-3 gap set equals main's (of 5),2
+variants whose top-3 gap ORDER equals main's (of 5),0
+variants whose #1 gap equals main's (of 5),1
+variants in which main's one 80%-distinguishable gap is still distinguishable (of 5),4

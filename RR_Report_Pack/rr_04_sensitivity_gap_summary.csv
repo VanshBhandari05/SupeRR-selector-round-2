@@ -1,0 +1,6 @@
+variant,in_brief,kendall_tau_priority_all10,below_par_set_overlap,top3_set_overlap,top3_same_order,rank1_same,main_below_slots_keeping_exact_rank,variant_top3,distinguishable80_slots,distinguishable95_slots
+top10%,False,0.37777777777777777,4 of 5 (variant has 5),2,False,False,2 of 5,bowling:powerplay|pace; bowling:death|pace; batting:7+,bowling:powerplay|pace,bowling:powerplay|pace
+top15%,True,0.5111111111111111,4 of 5 (variant has 5),2,False,True,2 of 5,bowling:death|pace; batting:7+; bowling:powerplay|pace,batting:7+,none
+top25%,True,0.8666666666666666,5 of 5 (variant has 5),3,False,False,3 of 5,bowling:middle|pace; bowling:death|pace; batting:7+,batting:7+,none
+top30%,True,0.8222222222222221,3 of 5 (variant has 3),3,False,False,0 of 5,bowling:middle|pace; batting:7+; bowling:death|pace,bowling:middle|pace; batting:7+,batting:7+
+within_innings,True,0.3333333333333333,4 of 5 (variant has 5),2,False,False,1 of 5,bowling:powerplay|pace; bowling:death|pace; batting:7+,batting:7+; bowling:powerplay|pace,bowling:powerplay|pace

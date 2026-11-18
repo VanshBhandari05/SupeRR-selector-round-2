@@ -1,0 +1,17 @@
+item,value
+RR team id (teams.csv name match),3
+RR IPL matches 2022-26 in matches.csv,77
+  excluded by Stage 1 cleaning (no ball data / rain),2
+RR IPL matches in the rating sample (used here),75
+RR players in playing_eleven for those matches,61
+"RR players listed in mapping, IPL squads 2022-26 (union)",69
+"RR players listed in mapping, IPL 2026 squad",27
+RR live balls batting (rating sample),8251
+RR live balls bowling (rating sample),8635
+RR PRESSURE deliveries batting,1688
+RR PRESSURE deliveries bowling,2024
+"RR PRESSURE deliveries total (batting + bowling, disjoint)",3712
+  of the batting ones: balls faced excluding wides (rows behind batting cells),1613
+  of the bowling ones: rows behind bowling cells,2024
+league IPL pressure deliveries in rating sample (all teams),15714
+RR pressure deliveries per RR match (batting / bowling),22.5 / 27.0
